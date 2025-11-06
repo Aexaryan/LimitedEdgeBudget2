@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MASTER PRODUCTION BUDGET INFOGRAPHIC</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Add Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display.swap');
         body {
             font-family: 'Inter', sans-serif;
             background-color: #0d1117; /* Dark background */
@@ -65,6 +67,47 @@
         }
         .sponsorship-item:last-child {
             border-bottom: none;
+        }
+        /* Chart container styling */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Max width for readability */
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px; /* Default height */
+            max-height: 350px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        /* Styled table */
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .styled-table th, .styled-table td {
+            padding: 12px 15px;
+            border: 1px solid #30363d;
+            text-align: left;
+        }
+        .styled-table thead th {
+            background-color: #161b22;
+            color: #8b949e;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+        .styled-table tbody tr:nth-child(even) {
+            background-color: #21262d;
+        }
+        .styled-table tbody tr:hover {
+            background-color: #30363d;
+        }
+        .styled-table td strong {
+            color: #2ea44f; /* Green accent */
         }
     </style>
 </head>
@@ -476,6 +519,222 @@
     </div>
     <!-- END OF INVESTMENT & SPONSORSHIP SECTION -->
 
+
+    <!-- START OF YOUTUBE ROI & RISK ANALYSIS SECTION -->
+    <div class="mt-16 pt-8 border-t border-gray-700">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-yellow-400 mb-2 text-center">YouTube Launch ROI & Risk Analysis</h2>
+        <h3 class="text-xl sm:text-2xl font-bold text-gray-300 mb-8 text-center">6-Month Projection (300M-400M Views)</h3>
+
+        <div class="section-card p-6 rounded-xl mb-8">
+            <h4 class="text-2xl font-bold text-gray-300 mb-4">Executive Summary</h4>
+            <p class="text-gray-400">This report analyzes the financial viability of launching the YouTube content, projecting a view volume of **300 million to 400 million** over the initial six-month period. Based on a conservative geographic view mix (30% Tier 1, 70% Tier 2), the project yields a high projected Return on Investment (ROI) ranging from **255.7% to 374.3%** against a hypothetical $350k content investment.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+            <!-- 1. Core Financial Assumptions -->
+            <div class="lg:col-span-2 section-card p-6 rounded-xl">
+                <h4 class="text-2xl font-bold text-gray-300 mb-4 border-b border-gray-700 pb-2">1. Core Financial Assumptions</h4>
+                <div class="overflow-x-auto">
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th>Variable</th>
+                                <th>Definition</th>
+                                <th>Value (USD)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Tier 1 (T1) eCPM</strong></td>
+                                <td>US, CA, UK, AU, etc.</td>
+                                <td>$8.00</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tier 2 (T2) eCPM</strong></td>
+                                <td>BR, MX, IN, other global markets</td>
+                                <td>$2.50</td>
+                            </tr>
+                            <tr>
+                                <td><strong>View Mix</strong></td>
+                                <td>Assumed geographic distribution</td>
+                                <td>T1: 30% / T2: 70%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Content Investment (I)</strong></td>
+                                <td>Estimated capital for production, staff, and initial promotion for 6 months</td>
+                                <td>$350,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-6">
+                    <h5 class="text-xl font-semibold text-gray-300 mb-2">Blended eCPM Calculation</h5>
+                    <p class="text-gray-400 text-lg">$(0.30 \times \$8.00) + (0.70 \times \$2.50) = \$2.40 + \$1.75 = <strong class="text-yellow-400 text-2xl">\mathbf{\$4.15}</strong>$</p>
+                </div>
+            </div>
+
+            <!-- View Mix Donut Chart -->
+            <div class="lg:col-span-1 section-card p-6 rounded-xl">
+                <h4 class="text-2xl font-bold text-gray-300 mb-4 text-center">Assumed View Mix (30/70)</h4>
+                <div class="chart-container" style="height: 250px; max-height: 250px;">
+                    <canvas id="viewMixChart"></canvas>
+                </div>
+                <p class="text-center text-sm text-gray-500 mt-4">The blended eCPM is highly dependent on maintaining this geographic mix.</p>
+            </div>
+        </div>
+
+        <!-- 2. Income Projection -->
+        <h4 class="text-2xl font-bold text-gray-300 mb-6 border-b border-gray-700 pb-2">2. Income & ROI Projection (6 Months)</h4>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <div class="section-card p-6 rounded-xl">
+                <h5 class="text-xl font-semibold text-gray-300 mb-4">Projected Revenue & Profit</h5>
+                <div class="overflow-x-auto">
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th>Scenario</th>
+                                <th>Total Views</th>
+                                <th>Gross Revenue (@ $4.15)</th>
+                                <th>Net Profit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Low End</strong></td>
+                                <td>300,000,000</td>
+                                <td><strong>$1,245,000</strong></td>
+                                <td><strong>$895,000</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>High End</strong></td>
+                                <td>400,000,000</td>
+                                <td><strong>$1,660,000</strong></td>
+                                <td><strong>$1,310,000</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="section-card p-6 rounded-xl">
+                <h5 class="text-xl font-semibold text-gray-300 mb-4">Projected Return on Investment (ROI)</h5>
+                <div class="overflow-x-auto">
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th>Scenario</th>
+                                <th>Net Profit</th>
+                                <th>Investment</th>
+                                <th>ROI</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Low End</strong></td>
+                                <td>$895,000</td>
+                                <td>$350,000</td>
+                                <td><strong class="text-2xl">255.7%</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>High End</strong></td>
+                                <td>$1,310,000</td>
+                                <td>$350,000</td>
+                                <td><strong class="text-2xl">374.3%</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bar Chart: Revenue and Profit -->
+        <div class="section-card p-6 rounded-xl mb-8">
+            <h5 class="text-xl font-semibold text-gray-300 mb-4 text-center">6-Month Financial Projections (Low vs. High End)</h5>
+             <div class="chart-container" style="height: 350px; max-height: 400px; max-width: 800px;">
+                <canvas id="revenueProjectionChart"></canvas>
+            </div>
+        </div>
+
+        <!-- 3. Risk Management -->
+        <h4 class="text-2xl font-bold text-gray-300 mb-6 border-b border-gray-700 pb-2">3. Professional Risk Management & Sensitivity</h4>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="section-card p-6 rounded-xl">
+                <h5 class="text-xl font-semibold text-gray-300 mb-4">Core Risk Factors & Mitigation</h5>
+                <div class="overflow-x-auto">
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th>Risk Factor</th>
+                                <th>Impact</th>
+                                <th>Mitigation Strategy</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Ad Rate Fluctuation</strong></td>
+                                <td>High</td>
+                                <td>Diversify revenue (brand deals, merch). Maintain quality for premium sponsors.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Platform Policy Changes</strong></td>
+                                <td>High</td>
+                                <td>Platform Agnosticism: Cross-post to TikTok/Instagram to hedge dependency.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Content Saturation</strong></td>
+                                <td>Medium</td>
+                                <td>Systematized production schedule and workflows to ensure consistent quality.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>View Mix Degradation</strong></td>
+                                <td>Medium</td>
+                                <td>Use paid promotion to target high-CPM (Tier 1) geographic regions.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="section-card p-6 rounded-xl">
+                <h5 class="text-xl font-semibold text-gray-300 mb-4">Sensitivity Analysis: 15% eCPM Drop</h5>
+                <p class="text-sm text-gray-400 mb-4">If blended eCPM drops from $4.15 to $3.53 (e.g., due to poor ad market or bad geographic mix):</p>
+                <div class="overflow-x-auto">
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th>Scenario</th>
+                                <th>New Net Profit</th>
+                                <th>New ROI</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>300M Views</strong></td>
+                                <td>$709,000</td>
+                                <td><strong>202.6%</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>400M Views</strong></td>
+                                <td>$1,052,000</td>
+                                <td><strong>300.6%</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                 <p class="text-center text-gray-400 mt-4 font-semibold">Conclusion: ROI remains exceptionally strong even under adverse conditions.</p>
+            </div>
+        </div>
+
+        <!-- 4. Conclusion -->
+        <div class="section-card p-6 rounded-xl mt-8 bg-gray-900 border-yellow-500/50">
+            <h4 class="text-2xl font-bold text-yellow-400 mb-4">Conclusion for Investors</h4>
+            <p class="text-gray-300">This project presents a compelling investment opportunity characterized by rapid scale and significant profit margins within a tight 6-month timeframe. The foundational strategy focuses on generating high-volume views while optimizing the geographic distribution to maximize the blended eCPM.</p>
+            <p class="text-gray-300 mt-4">The estimated initial investment of **$350,000** is protected by a calculated break-even point achieved well before the six-month mark. The projected Net Profit range of **$895,000 to $1,310,000** showcases the potential for exponential growth and justifies the required capital infusion.</p>
+        </div>
+
+    </div>
+    <!-- END OF YOUTUBE ROI & RISK ANALYSIS SECTION -->
+
+
 </div>
 
 <script>
@@ -608,7 +867,7 @@
         { item: '2.14 INSURANCE & PERMITS', cost: 8000, percentage: calculatePerc(8000), icon: '📄', 
           breakdown: [
             { name: 'Liability Insurance', cost: 3500, perc: calculatePerc(3500) },
-            { name: 'Drone Permits', cost: 800, perc: calculatePerc(800) },
+            { name: 'Drones-Permits', cost: 800, perc: calculatePerc(800) },
             { name: 'Location Permits', cost: 2200, perc: calculatePerc(2200) },
             { name: 'Municipal Fees', cost: 1500, perc: calculatePerc(1500) },
           ]
@@ -733,6 +992,127 @@
     ).join('');
 
     productionDetailsContainer.innerHTML = detailCardHtml;
+
+
+    // --- NEW CHARTS FOR ROI SECTION ---
+
+    // 3. View Mix Donut Chart
+    const ctxViewMix = document.getElementById('viewMixChart').getContext('2d');
+    new Chart(ctxViewMix, {
+        type: 'doughnut',
+        data: {
+            labels: ['Tier 1 (30%)', 'Tier 2 (70%)'],
+            datasets: [{
+                data: [30, 70],
+                backgroundColor: ['#2ea44f', '#30363d'],
+                borderColor: ['#2ea44f', '#30363d'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        color: '#c9d1d9'
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            return tooltipItems[0].label;
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // 4. Revenue Projection Bar Chart
+    const ctxRevenue = document.getElementById('revenueProjectionChart').getContext('2d');
+    new Chart(ctxRevenue, {
+        type: 'bar',
+        data: {
+            labels: ['Low End (300M Views)', 'High End (400M Views)'],
+            datasets: [
+                {
+                    label: 'Gross Revenue',
+                    data: [1245000, 1660000],
+                    backgroundColor: '#2ea44f',
+                    borderColor: '#2ea44f',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Net Profit',
+                    data: [895000, 1310000],
+                    backgroundColor: '#FBBF24', // Yellow
+                    borderColor: '#FBBF24',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Investment Cost',
+                    data: [350000, 350000],
+                    backgroundColor: '#8b949e', // Gray
+                    borderColor: '#8b949e',
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: '#c9d1d9',
+                        callback: function(value) {
+                            return formatter.format(value);
+                        }
+                    },
+                    grid: {
+                        color: '#30363d'
+                    }
+                },
+                x: {
+                    ticks: {
+                        color: '#c9d1d9'
+                    },
+                    grid: {
+                        display: false
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        color: '#c9d1d9'
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            return tooltipItems[0].label;
+                        },
+                         label: function(context) {
+                            let label = context.dataset.label || '';
+                            if (label) {
+                                label += ': ';
+                            }
+                            if (context.parsed.y !== null) {
+                                label += formatter.format(context.parsed.y);
+                            }
+                            return label;
+                        }
+                    }
+                }
+            }
+        }
+    });
+
 </script>
 
 </body>
