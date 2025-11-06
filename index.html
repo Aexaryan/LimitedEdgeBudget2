@@ -57,21 +57,30 @@
             font-weight: 500;
             color: #c9d1d9;
         }
+        .sponsorship-item {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            border-bottom: 1px solid #30363d;
+        }
+        .sponsorship-item:last-child {
+            border-bottom: none;
+        }
     </style>
 </head>
 <body>
 
 <div class="container mx-auto p-4 sm:p-8 lg:p-12">
     <header class="text-center mb-10">
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#2ea44f] mb-2">LIMIT EDGE — MASTER PRODUCTION BUDGET (FINAL)</h1>
-        <h2 class="text-xl sm:text-2xl font-light text-gray-400">Total Project Value: $554,950 (UPDATED)</h2>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#2ea44f] mb-2">LIMIT EDGE — MASTER PRODUCTION BUDGET (ALL DETAILS)</h1>
+        <h2 class="text-xl sm:text-2xl font-light text-gray-400">Total Project Value: $567,350</h2>
         <div class="h-1 w-24 bg-gray-600 mx-auto mt-4 rounded-full"></div>
     </header>
 
     <!-- Grand Total -->
     <div class="section-card p-6 mb-10 rounded-xl text-center">
         <p class="text-lg font-semibold text-gray-400">GRAND TOTAL BUDGET ALLOCATION</p>
-        <p class="text-5xl sm:text-6xl font-black text-white mt-2 mb-1">$554,950</p>
+        <p class="text-5xl sm:text-6xl font-black text-white mt-2 mb-1">$567,350</p>
         <p class="text-xl font-bold text-[#2ea44f]">(100%)</p>
     </div>
 
@@ -88,20 +97,20 @@
         
         <!-- 1. Pre-Production Details -->
         <div class="lg:col-span-1">
-            <h3 class="text-xl font-bold text-gray-300 mb-4 border-b border-gray-700 pb-2">1. Pre-Production ($33,000 / 5.95%)</h3>
+            <h3 class="text-xl font-bold text-gray-300 mb-4 border-b border-gray-700 pb-2">1. Pre-Production ($33,000 / 5.82%)</h3>
             <p class="text-sm text-gray-500 mb-3">Full planning phase, concept development, and casting prep.</p>
             <div class="section-card p-4 rounded-lg space-y-2">
                 
                 <!-- 1.1 CREATIVE DEVELOPMENT -->
-                <div class="sub-category-header">1.1 Creative Development ($6,000 / 1.08%)</div>
+                <div class="sub-category-header">1.1 Creative Development ($6,000 / 1.06%)</div>
                 <ul class="breakdown-list space-y-1 mt-1">
-                    <li><span class="breakdown-name">Concept & show structure</span><span class="breakdown-cost">$2,500 <span class="text-xs text-[#2ea44f]">(0.45%)</span></span></li>
-                    <li><span class="breakdown-name">Episode format breakdown (30 eps)</span><span class="breakdown-cost">$1,500 <span class="text-xs text-[#2ea44f]">(0.27%)</span></span></li>
-                    <li><span class="breakdown-name">Challenge design (water/endurance)</span><span class="breakdown-cost">$2,000 <span class="text-xs text-[#2ea44f]">(0.36%)</span></span></li>
+                    <li><span class="breakdown-name">Concept & show structure</span><span class="breakdown-cost">$2,500 <span class="text-xs text-[#2ea44f]">(0.44%)</span></span></li>
+                    <li><span class="breakdown-name">Episode format breakdown (30 eps)</span><span class="breakdown-cost">$1,500 <span class="text-xs text-[#2ea44f]">(0.26%)</span></span></li>
+                    <li><span class="breakdown-name">Challenge design</span><span class="breakdown-cost">$2,000 <span class="text-xs text-[#2ea44f]">(0.35%)</span></span></li>
                 </ul>
                 
                 <!-- 1.2 CASTING & TALENT PREP -->
-                <div class="sub-category-header">1.2 Casting & Talent Prep ($2,000 / 0.36%)</div>
+                <div class="sub-category-header">1.2 Casting & Talent Prep ($2,000 / 0.35%)</div>
                  <ul class="breakdown-list space-y-1 mt-1">
                     <li><span class="breakdown-name">Athlete casting & interviews</span><span class="breakdown-cost">$1,000 <span class="text-xs text-[#2ea44f]">(0.18%)</span></span></li>
                     <li><span class="breakdown-name">Host casting</span><span class="breakdown-cost">$500 <span class="text-xs text-[#2ea44f]">(0.09%)</span></span></li>
@@ -109,61 +118,61 @@
                 </ul>
 
                 <!-- 1.3 LOCATION SCOUTING -->
-                <div class="sub-category-header">1.3 Location Scouting ($5,500 / 0.99%)</div>
+                <div class="sub-category-header">1.3 Location Scouting ($5,500 / 0.97%)</div>
                  <ul class="breakdown-list space-y-1 mt-1">
-                    <li><span class="breakdown-name">Travel (Spain scouting)</span><span class="breakdown-cost">$3,000 <span class="text-xs text-[#2ea44f]">(0.54%)</span></span></li>
-                    <li><span class="breakdown-name">Accommodation (scouting)</span><span class="breakdown-cost">$1,500 <span class="text-xs text-[#2ea44f]">(0.27%)</span></span></li>
+                    <li><span class="breakdown-name">Travel (Spain scouting)</span><span class="breakdown-cost">$3,000 <span class="text-xs text-[#2ea44f]">(0.53%)</span></span></li>
+                    <li><span class="breakdown-name">Accommodation (scouting)</span><span class="breakdown-cost">$1,500 <span class="text-xs text-[#2ea44f]">(0.26%)</span></span></li>
                     <li><span class="breakdown-name">Fixer / location consultant</span><span class="breakdown-cost">$1,000 <span class="text-xs text-[#2ea44f]">(0.18%)</span></span></li>
                 </ul>
                 
                 <!-- 1.4 SET / OBSTACLE ENGINEERING -->
-                <div class="sub-category-header">1.4 Set & Obstacle Engineering ($12,000 / 2.16%)</div>
+                <div class="sub-category-header">1.4 Set & Obstacle Engineering ($12,000 / 2.12%)</div>
                  <ul class="breakdown-list space-y-1 mt-1">
-                    <li><span class="breakdown-name">Water challenge engineering</span><span class="breakdown-cost">$4,000 <span class="text-xs text-[#2ea44f]">(0.72%)</span></span></li>
-                    <li><span class="breakdown-name">Construction materials</span><span class="breakdown-cost">$5,000 <span class="text-xs text-[#2ea44f]">(0.90%)</span></span></li>
-                    <li><span class="breakdown-name">Platforms / sand / site setup</span><span class="breakdown-cost">$2,000 <span class="text-xs text-[#2ea44f]">(0.36%)</span></span></li>
+                    <li><span class="breakdown-name">Water challenge engineering</span><span class="breakdown-cost">$4,000 <span class="text-xs text-[#2ea44f]">(0.70%)</span></span></li>
+                    <li><span class="breakdown-name">Construction materials</span><span class="breakdown-cost">$5,000 <span class="text-xs text-[#2ea44f]">(0.88%)</span></span></li>
+                    <li><span class="breakdown-name">Platforms / sand / site setup</span><span class="breakdown-cost">$2,000 <span class="text-xs text-[#2ea44f]">(0.35%)</span></span></li>
                     <li><span class="breakdown-name">Safety ropes & padding</span><span class="breakdown-cost">$1,000 <span class="text-xs text-[#2ea44f]">(0.18%)</span></span></li>
                 </ul>
                 
                 <!-- 1.5 ADMIN, PLANNING, SCHEDULING -->
-                <div class="sub-category-header">1.5 Admin, Planning, Scheduling ($3,000 / 0.54%)</div>
+                <div class="sub-category-header">1.5 Admin, Planning, Scheduling ($3,000 / 0.53%)</div>
                 
                 <!-- 1.6 MARKETING PREP -->
-                <div class="sub-category-header">1.6 Marketing Prep (teaser assets) ($4,500 / 0.81%)</div>
+                <div class="sub-category-header">1.6 Marketing Prep (teaser assets) ($4,500 / 0.79%)</div>
             </div>
         </div>
 
         <!-- 3. Post-Production -->
         <div class="lg:col-span-1">
-            <h3 class="text-xl font-bold text-gray-300 mb-4 border-b border-gray-700 pb-2">3. Post-Production ($163,800 / 29.52%)</h3>
+            <h3 class="text-xl font-bold text-gray-300 mb-4 border-b border-gray-700 pb-2">3. Post-Production ($163,800 / 28.87%)</h3>
             <p class="text-sm text-gray-500 mb-3">Finalizing 30 episodes for delivery.</p>
             <div class="section-card p-4 rounded-lg space-y-3">
                 
-                <div class="sub-category-header mt-0 border-t-0">3.1 Editing ($86,000 / 15.50%)</div>
+                <div class="sub-category-header mt-0 border-t-0">3.1 Editing ($86,000 / 15.16%)</div>
                 <ul class="breakdown-list space-y-1 mt-1">
-                    <li><span class="breakdown-name">Lead editor</span><span class="breakdown-cost">$61,000 <span class="text-xs text-[#2ea44f]">(10.99%)</span></span></li>
-                    <li><span class="breakdown-name">Assistant editor</span><span class="breakdown-cost">$25,000 <span class="text-xs text-[#2ea44f]">(4.51%)</span></span></li>
+                    <li><span class="breakdown-name">Lead editor</span><span class="breakdown-cost">$61,000 <span class="text-xs text-[#2ea44f]">(10.75%)</span></span></li>
+                    <li><span class="breakdown-name">Assistant editor</span><span class="breakdown-cost">$25,000 <span class="text-xs text-[#2ea44f]">(4.41%)</span></span></li>
                 </ul>
 
-                <div class="sub-category-header">3.2 Sound ($24,000 / 4.32%)</div>
+                <div class="sub-category-header">3.2 Sound ($24,000 / 4.23%)</div>
                 <ul class="breakdown-list space-y-1 mt-1">
-                    <li><span class="breakdown-name">Sound editing</span><span class="breakdown-cost">$12,000 <span class="text-xs text-[#2ea44f]">(2.16%)</span></span></li>
-                    <li><span class="breakdown-name">Re-recording mix</span><span class="breakdown-cost">$12,000 <span class="text-xs text-[#2ea44f]">(2.16%)</span></span></li>
+                    <li><span class="breakdown-name">Sound editing</span><span class="breakdown-cost">$12,000 <span class="text-xs text-[#2ea44f]">(2.12%)</span></span></li>
+                    <li><span class="breakdown-name">Re-recording mix</span><span class="breakdown-cost">$12,000 <span class="text-xs text-[#2ea44f]">(2.12%)</span></span></li>
                 </ul>
 
-                <div class="sub-category-header">3.3 Music Licensing ($4,000 / 0.72%)</div>
+                <div class="sub-category-header">3.3 Music Licensing ($4,000 / 0.70%)</div>
                 
-                <div class="sub-category-header">3.4 Color Grading ($21,000 / 3.78%)</div>
+                <div class="sub-category-header">3.4 Color Grading ($21,000 / 3.70%)</div>
                 
-                <div class="sub-category-header">3.5 Motion Graphics & Titles ($18,000 / 3.24%)</div>
+                <div class="sub-category-header">3.5 Motion Graphics & Titles ($18,000 / 3.17%)</div>
                 
-                <div class="sub-category-header">3.6 Mastering / QC / Deliverables ($10,800 / 1.95%)</div>
+                <div class="sub-category-header">3.6 Mastering / QC / Deliverables ($10,800 / 1.90%)</div>
 
                 <div class="h-px bg-gray-700 my-4"></div>
                 
                 <!-- 6. Contingency -->
-                <div class="text-lg font-semibold text-[#2ea44f]">6. Contingency (Risk Fund) ($20,000 / 3.61%)</div>
-                <div class="text-sm text-gray-500 mb-1">Covers unexpected costs, set at 3.61% of total.</div>
+                <div class="text-lg font-semibold text-[#2ea44f]">6. Contingency (Risk Fund) ($20,000 / 3.52%)</div>
+                <div class="text-sm text-gray-500 mb-1">Covers unexpected costs, set at 3.52% of total.</div>
             </div>
         </div>
 
@@ -173,29 +182,29 @@
             <div class="section-card p-4 rounded-lg space-y-3">
                 
                 <!-- 4. MARKETING & DISTRIBUTION -->
-                <div class="text-lg font-semibold text-[#2ea44f]">4. Marketing & Distribution ($33,600 / 6.05%)</div>
-                <div class="sub-category-header mt-0 border-t-0">4.1 PR & Media Buying ($15,000 / 2.70%)</div>
+                <div class="text-lg font-semibold text-[#2ea44f]">4. Marketing & Distribution ($33,600 / 5.92%)</div>
+                <div class="sub-category-header mt-0 border-t-0">4.1 PR & Media Buying ($15,000 / 2.64%)</div>
                 <ul class="breakdown-list space-y-1 mt-1">
-                    <li><span class="breakdown-name">Press release prep</span><span class="breakdown-cost">$2,500 <span class="text-xs text-[#2ea44f]">(0.45%)</span></span></li>
-                    <li><span class="breakdown-name">Distribution to TV/press</span><span class="breakdown-cost">$2,000 <span class="text-xs text-[#2ea44f]">(0.36%)</span></span></li>
-                    <li><span class="breakdown-name">Sponsored media articles</span><span class="breakdown-cost">$3,000 <span class="text-xs text-[#2ea44f]">(0.54%)</span></span></li>
-                    <li><span class="breakdown-name">News outreach</span><span class="breakdown-cost">$2,500 <span class="text-xs text-[#2ea44f]">(0.45%)</span></span></li>
-                    <li><span class="breakdown-name">Online media ad placement</span><span class="breakdown-cost">$5,000 <span class="text-xs text-[#2ea44f]">(0.90%)</span></span></li>
+                    <li><span class="breakdown-name">Press release prep</span><span class="breakdown-cost">$2,500 <span class="text-xs text-[#2ea44f]">(0.44%)</span></span></li>
+                    <li><span class="breakdown-name">Distribution to TV/press</span><span class="breakdown-cost">$2,000 <span class="text-xs text-[#2ea44f]">(0.35%)</span></span></li>
+                    <li><span class="breakdown-name">Sponsored media articles</span><span class="breakdown-cost">$3,000 <span class="text-xs text-[#2ea44f]">(0.53%)</span></span></li>
+                    <li><span class="breakdown-name">News outreach</span><span class="breakdown-cost">$2,500 <span class="text-xs text-[#2ea44f]">(0.44%)</span></span></li>
+                    <li><span class="breakdown-name">Online media ad placement</span><span class="breakdown-cost">$5,000 <span class="text-xs text-[#2ea44f]">(0.88%)</span></span></li>
                 </ul>
 
-                <div class="sub-category-header">4.2 Social Media Campaigns ($8,000 / 1.44%)</div>
+                <div class="sub-category-header">4.2 Social Media Campaigns ($8,000 / 1.41%)</div>
                 <ul class="breakdown-list space-y-1 mt-1">
-                    <li><span class="breakdown-name">Instagram ads / TikTok ads</span><span class="breakdown-cost">$4,000 <span class="text-xs text-[#2ea44f]">(0.72%)</span></span></li>
-                    <li><span class="breakdown-name">YouTube pre-roll</span><span class="breakdown-cost">$1,500 <span class="text-xs text-[#2ea44f]">(0.27%)</span></span></li>
-                    <li><span class="breakdown-name">Influencer promo</span><span class="breakdown-cost">$1,500 <span class="text-xs text-[#2ea44f]">(0.27%)</span></span></li>
+                    <li><span class="breakdown-name">Instagram ads / TikTok ads</span><span class="breakdown-cost">$4,000 <span class="text-xs text-[#2ea44f]">(0.70%)</span></span></li>
+                    <li><span class="breakdown-name">YouTube pre-roll</span><span class="breakdown-cost">$1,500 <span class="text-xs text-[#2ea44f]">(0.26%)</span></span></li>
+                    <li><span class="breakdown-name">Influencer promo</span><span class="breakdown-cost">$1,500 <span class="text-xs text-[#2ea44f]">(0.26%)</span></span></li>
                     <li><span class="breakdown-name">Content creation</span><span class="breakdown-cost">$1,000 <span class="text-xs text-[#2ea44f]">(0.18%)</span></span></li>
                 </ul>
 
-                <div class="sub-category-header">4.3 Trailer & Advertising Materials ($10,600 / 1.91%)</div>
+                <div class="sub-category-header">4.3 Trailer & Advertising Materials ($10,600 / 1.87%)</div>
                 <ul class="breakdown-list space-y-1 mt-1">
-                    <li><span class="breakdown-name">Trailer editing & color</span><span class="breakdown-cost">$5,300 <span class="text-xs text-[#2ea44f]">(0.95%)</span></span></li>
+                    <li><span class="breakdown-name">Trailer editing & color</span><span class="breakdown-cost">$5,300 <span class="text-xs text-[#2ea44f]">(0.93%)</span></span></li>
                     <li><span class="breakdown-name">Trailer music license</span><span class="breakdown-cost">$1,300 <span class="text-xs text-[#2ea44f]">(0.23%)</span></span></li>
-                    <li><span class="breakdown-name">Trailer motion graphics</span><span class="breakdown-cost">$2,000 <span class="text-xs text-[#2ea44f]">(0.36%)</span></span></li>
+                    <li><span class="breakdown-name">Trailer motion graphics</span><span class="breakdown-cost">$2,000 <span class="text-xs text-[#2ea44f]">(0.35%)</span></span></li>
                     <li><span class="breakdown-name">Thumbnail / poster design</span><span class="breakdown-cost">$1,000 <span class="text-xs text-[#2ea44f]">(0.18%)</span></span></li>
                     <li><span class="breakdown-name">Subtitles / captions</span><span class="breakdown-cost">$1,000 <span class="text-xs text-[#2ea44f]">(0.18%)</span></span></li>
                 </ul>
@@ -203,19 +212,19 @@
                 <div class="h-px bg-gray-700 my-2"></div>
                 
                 <!-- 5. LEGAL & ACCOUNTING -->
-                <div class="text-lg font-semibold text-[#2ea44f]">5. Legal & Accounting ($10,800 / 1.95%)</div>
-                <div class="sub-category-header mt-0 border-t-0">5.1 Legal ($6,000 / 1.08%)</div>
+                <div class="text-lg font-semibold text-[#2ea44f]">5. Legal & Accounting ($10,800 / 1.90%)</div>
+                <div class="sub-category-header mt-0 border-t-0">5.1 Legal ($6,000 / 1.06%)</div>
                 <ul class="breakdown-list space-y-1 mt-1">
-                    <li><span class="breakdown-name">Contracts (Crew, Athletes, Host)</span><span class="breakdown-cost">$2,500 <span class="text-xs text-[#2ea44f]">(0.45%)</span></span></li>
+                    <li><span class="breakdown-name">Contracts (Crew, Athletes, Host)</span><span class="breakdown-cost">$2,500 <span class="text-xs text-[#2ea44f]">(0.44%)</span></span></li>
                     <li><span class="breakdown-name">Location agreements</span><span class="breakdown-cost">$1,000 <span class="text-xs text-[#2ea44f]">(0.18%)</span></span></li>
                     <li><span class="breakdown-name">Release forms (image, liability)</span><span class="breakdown-cost">$1,000 <span class="text-xs text-[#2ea44f]">(0.18%)</span></span></li>
                     <li><span class="breakdown-name">Insurance legal review</span><span class="breakdown-cost">$1,000 <span class="text-xs text-[#2ea44f]">(0.18%)</span></span></li>
                     <li><span class="breakdown-name">Misc consultation</span><span class="breakdown-cost">$500 <span class="text-xs text-[#2ea44f]">(0.09%)</span></span></li>
                 </ul>
 
-                <div class="sub-category-header">5.2 Accounting ($4,800 / 0.86%)</div>
+                <div class="sub-category-header">5.2 Accounting ($4,800 / 0.85%)</div>
                 <ul class="breakdown-list space-y-1 mt-1">
-                    <li><span class="breakdown-name">Production controller</span><span class="breakdown-cost">$3,000 <span class="text-xs text-[#2ea44f]">(0.54%)</span></span></li>
+                    <li><span class="breakdown-name">Production controller</span><span class="breakdown-cost">$3,000 <span class="text-xs text-[#2ea44f]">(0.53%)</span></span></li>
                     <li><span class="breakdown-name">Tax documentation</span><span class="breakdown-cost">$800 <span class="text-xs text-[#2ea44f]">(0.14%)</span></span></li>
                     <li><span class="breakdown-name">Payroll management</span><span class="breakdown-cost">$1,000 <span class="text-xs text-[#2ea44f]">(0.18%)</span></span></li>
                 </ul>
@@ -225,22 +234,257 @@
 
     <!-- 2. Production Details (The largest segment) -->
     <div class="mt-12">
-        <h3 class="text-2xl font-bold text-gray-300 mb-6 border-b border-yellow-500 pb-2">2. PRODUCTION: THE CORE EXPENDITURE ($293,750 / 52.93%)</h3>
-        <p class="text-gray-400 mb-6">28 days of full operation, with adjusted crew and equipment costs.</p>
+        <h3 class="text-2xl font-bold text-gray-300 mb-6 border-b border-yellow-500 pb-2">2. PRODUCTION: THE CORE EXPENDITURE ($306,150 / 53.97%)</h3>
+        <p class="text-gray-400 mb-6">28 days of full operation, now including dedicated branding and wardrobe.</p>
         <div id="production-details" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <!-- Production details will be inserted here by JavaScript -->
         </div>
     </div>
 
+    <!-- START OF INVESTMENT & SPONSORSHIP SECTION -->
+    <div class="mt-16 pt-8 border-t border-gray-700">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#2ea44f] mb-2 text-center">LIMIT EDGE REALITY SHOW</h2>
+        <h3 class="text-xl sm:text-2xl font-bold text-gray-300 mb-4 text-center">Investment Tiers, Benefits & Sponsorship Opportunities</h3>
+        <div class="section-card p-6 mb-8 rounded-xl text-center bg-yellow-900/20 border-yellow-500/50">
+            <p class="text-xl font-semibold text-gray-300">Total Investment Requirement:</p>
+            <p class="text-5xl font-black text-yellow-400 mt-2">$567,350</p>
+            <p class="text-sm font-light text-gray-400 mt-2">Join us in creating the next Persian sports reality phenomenon.</p>
+        </div>
+
+        <!-- 1. Investment Tiers -->
+        <h4 class="text-2xl font-bold text-gray-300 mb-6 border-b border-gray-700 pb-2">✅ Investment Tiers & Benefits</h4>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <!-- Bronze Tier -->
+            <div class="section-card p-6 rounded-xl border-t-4 border-amber-600">
+                <p class="text-4xl mb-3">🥉</p>
+                <h5 class="text-xl font-bold text-amber-600 mb-2">Bronze Tier — $10,000</h5>
+                <ul class="text-sm list-disc pl-5 space-y-1 text-gray-400">
+                    <li>Logo placement on **equipment**</li>
+                    <li>Social media **mentions**</li>
+                    <li>Basic performance reports</li>
+                    <li>Brand recognition tracking</li>
+                    <li>Monthly progress updates</li>
+                </ul>
+            </div>
+            <!-- Silver Tier -->
+            <div class="section-card p-6 rounded-xl border-t-4 border-gray-400">
+                <p class="text-4xl mb-3">🥈</p>
+                <h5 class="text-xl font-bold text-gray-400 mb-2">Silver Tier — $25,000</h5>
+                <ul class="text-sm list-disc pl-5 space-y-1 text-gray-400">
+                    <li>Logo placement on **athlete clothing**</li>
+                    <li>Product placement in challenges</li>
+                    <li>Detailed analytics reports</li>
+                    <li>Audience engagement metrics</li>
+                    <li>Post-show follow-up campaigns</li>
+                    <li>Quarterly investor meetings</li>
+                </ul>
+            </div>
+            <!-- Gold Tier -->
+            <div class="section-card p-6 rounded-xl border-t-4 border-yellow-500">
+                <p class="text-4xl mb-3">🥇</p>
+                <h5 class="text-xl font-bold text-yellow-500 mb-2">Gold Tier — $50,000+</h5>
+                <ul class="text-sm list-disc pl-5 space-y-1 text-gray-400">
+                    <li>**Premium** logo placement</li>
+                    <li>Exclusive product integration</li>
+                    <li>Custom marketing campaigns</li>
+                    <li>Real-time performance tracking</li>
+                    <li>Priority access for future seasons</li>
+                    <li>**Executive Producer** credit</li>
+                    <li>Direct access to production team</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 2. Detailed Sponsorship Structure -->
+        <h4 class="text-2xl font-bold text-gray-300 mb-6 border-b border-gray-700 pb-2">✅ Detailed Investment & Sponsorship Structure</h4>
+        <div class="space-y-4">
+            <!-- Table row structure using grid for responsiveness -->
+            <div class="grid grid-cols-4 md:grid-cols-5 text-xs sm:text-sm font-semibold text-center border-b border-gray-600 pb-2 text-[#2ea44f] uppercase">
+                <div class="col-span-1">Level</div>
+                <div class="col-span-1">Contribution (USD)</div>
+                <div class="hidden md:block">Covers / Role</div>
+                <div class="col-span-2 md:col-span-1">Deliverables</div>
+                <div class="hidden md:block">ROI / Benefits</div>
+            </div>
+
+            <!-- Data Rows (Investment contribution costs need updating based on the new total if percentages change, but since the user only provided the total investment, I will assume the tiers remain fixed) -->
+            <div class="sponsorship-item grid grid-cols-4 md:grid-cols-5 text-sm">
+                <div class="font-bold text-white col-span-1">Shared Investor (50/50)</div>
+                <div class="text-yellow-400 col-span-1">$283,675 (50% of total)</div>
+                <div class="hidden md:block text-gray-500">50% of total budget</div>
+                <div class="col-span-2 md:col-span-1 text-gray-300">• 50% equity in profits • Co-production credit</div>
+                <div class="hidden md:block text-[#2ea44f]">15–20% ROI, equity in future seasons</div>
+            </div>
+             <div class="sponsorship-item grid grid-cols-4 md:grid-cols-5 text-sm">
+                <div class="font-bold text-white col-span-1">Hybrid Investor-Sponsor</div>
+                <div class="text-yellow-400 col-span-1">$100,000+</div>
+                <div class="hidden md:block text-gray-500">Partial investment + branding</div>
+                <div class="col-span-2 md:col-span-1 text-gray-300">• Equity share • Sponsor benefits • Logo in challenges</div>
+                <div class="hidden md:block text-[#2ea44f]">Dual financial + brand ROI</div>
+            </div>
+            <div class="sponsorship-item grid grid-cols-4 md:grid-cols-5 text-sm">
+                <div class="font-bold text-white col-span-1">Title Sponsor</div>
+                <div class="text-yellow-400 col-span-1">$120,000</div>
+                <div class="hidden md:block text-gray-500">Major branding and marketing share</div>
+                <div class="col-span-2 md:col-span-1 text-gray-300">• “Presented by [Brand]” • Naming rights for main challenges</div>
+                <div class="hidden md:block text-[#2ea44f]">Maximum visibility & exclusivity</div>
+            </div>
+            <div class="sponsorship-item grid grid-cols-4 md:grid-cols-5 text-sm">
+                <div class="font-bold text-white col-span-1">Platinum Sponsor</div>
+                <div class="text-yellow-400 col-span-1">$75,000</div>
+                <div class="hidden md:block text-gray-500">Deep brand integration</div>
+                <div class="col-span-2 md:col-span-1 text-gray-300">• Logo in credits • Product placement • Behind-the-scenes features</div>
+                <div class="hidden md:block text-[#2ea44f]">High audience association</div>
+            </div>
+            <div class="sponsorship-item grid grid-cols-4 md:grid-cols-5 text-sm">
+                <div class="font-bold text-white col-span-1">Gold Sponsor</div>
+                <div class="text-yellow-400 col-span-1">$50,000</div>
+                <div class="hidden md:block text-gray-500">Challenge branding</div>
+                <div class="col-span-2 md:col-span-1 text-gray-300">• Prominent logo on set • Social media pushes</div>
+                <div class="hidden md:block text-[#2ea44f]">Broad, high-value visibility</div>
+            </div>
+            <div class="sponsorship-item grid grid-cols-4 md:grid-cols-5 text-sm">
+                <div class="font-bold text-white col-span-1">Silver Sponsor</div>
+                <div class="text-yellow-400 col-span-1">$25,000</div>
+                <div class="hidden md:block text-gray-500">Props & PR support</div>
+                <div class="col-span-2 md:col-span-1 text-gray-300">• Logo on props • Co-branded posts</div>
+                <div class="hidden md:block text-[#2ea44f]">Cost-effective exposure</div>
+            </div>
+            <div class="sponsorship-item grid grid-cols-4 md:grid-cols-5 text-sm">
+                <div class="font-bold text-white col-span-1">Bronze Sponsor</div>
+                <div class="text-yellow-400 col-span-1">$10,000</div>
+                <div class="hidden md:block text-gray-500">Credits & website</div>
+                <div class="col-span-2 md:col-span-1 text-gray-300">• Logo in end credits • Press release inclusions</div>
+                <div class="hidden md:block text-[#2ea44f]">Entry-level exposure</div>
+            </div>
+            <div class="sponsorship-item grid grid-cols-4 md:grid-cols-5 text-sm">
+                <div class="font-bold text-white col-span-1">Category Partner (Exclusive)</div>
+                <div class="text-yellow-400 col-span-1">$85,000</div>
+                <div class="hidden md:block text-gray-500">Product category exclusivity</div>
+                <div class="col-span-2 md:col-span-1 text-gray-300">• “Official [Product] of Limit Edge” • Daily product integration</div>
+                <div class="hidden md:block text-[#2ea44f]">Dominant niche presence</div>
+            </div>
+            <div class="sponsorship-item grid grid-cols-4 md:grid-cols-5 text-sm">
+                <div class="font-bold text-white col-span-1">Digital-Only Sponsor</div>
+                <div class="text-yellow-400 col-span-1">$5,000</div>
+                <div class="hidden md:block text-gray-500">Online-only</div>
+                <div class="col-span-2 md:col-span-1 text-gray-300">• Mentions in clips, hashtags • Digital product placements</div>
+                <div class="hidden md:block text-[#2ea44f]">High social media value</div>
+            </div>
+        </div>
+
+        <!-- 3. Benefits and Value Proposition -->
+        <h4 class="text-2xl font-bold text-gray-300 my-6 border-b border-gray-700 pb-2">✅ Investor Benefits & Value Proposition</h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Brand Exposure -->
+            <div class="section-card p-5 rounded-xl">
+                <h5 class="text-xl font-bold text-gray-200 mb-3 flex items-center"><span class="text-yellow-400 mr-2">⭐</span> Brand Exposure Opportunities</h5>
+                <ul class="text-sm list-disc pl-5 space-y-2 text-gray-400">
+                    <li>🏷️ **Branding** on athlete clothing, equipment, and challenge stations</li>
+                    <li>📦 **Product placement** in villa, gym, challenge zones</li>
+                    <li>📺 **Multi-platform** broadcast and streaming exposure</li>
+                    <li>🔄 **Evergreen** online revenue & future-season expansions</li>
+                </ul>
+            </div>
+            <!-- ROI Tracking -->
+            <div class="section-card p-5 rounded-xl">
+                <h5 class="text-xl font-bold text-gray-200 mb-3 flex items-center"><span class="text-yellow-400 mr-2">⭐</span> ROI Tracking & Analytics</h5>
+                <ul class="text-sm list-disc pl-5 space-y-2 text-gray-400">
+                    <li>📊 Post-broadcast **performance package**</li>
+                    <li>📈 Viewership analytics, engagement, demographics</li>
+                    <li>💰 Revenue tracking (ads, placements, digital ops)</li>
+                    <li>🎯 Brand impact metrics & **recognition indexing**</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 4. Target Audience and Timeline -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
+            <!-- Sponsorship Sectors -->
+            <div class="lg:col-span-1">
+                <h4 class="text-2xl font-bold text-gray-300 mb-4 border-b border-gray-700 pb-2">✅ Sponsorship Opportunities (Ideal Sectors)</h4>
+                <ul class="text-sm list-disc pl-5 space-y-2 text-gray-400 section-card p-5 rounded-xl">
+                    <li>Supplement brands</li>
+                    <li>Activewear & gym apparel</li>
+                    <li>Fitness apps & technology</li>
+                    <li>Nutrition & wellness products</li>
+                    <li>Energy drinks & hydration brands</li>
+                    <li>Adventure gear & outdoor companies</li>
+                </ul>
+                <h4 class="text-2xl font-bold text-gray-300 mb-4 mt-6 border-b border-gray-700 pb-2">✅ Branding Opportunities</h4>
+                <ul class="text-sm list-disc pl-5 space-y-2 text-gray-400 section-card p-5 rounded-xl">
+                    <li>Athlete clothing & equipment</li>
+                    <li>On-set challenge branding</li>
+                    <li>Digital overlays on episodes</li>
+                    <li>Villa product placement</li>
+                    <li>Social media co-branded content</li>
+                    <li>Dedicated ROI reporting</li>
+                </ul>
+            </div>
+
+            <!-- Reach & Timeline -->
+            <div class="lg:col-span-2">
+                <h4 class="text-2xl font-bold text-gray-300 mb-4 border-b border-gray-700 pb-2">✅ Target Audience & Reach</h4>
+                <div class="grid grid-cols-3 gap-4 text-center mb-8">
+                    <div class="section-card p-4 rounded-xl">
+                        <p class="text-4xl font-extrabold text-yellow-400">10M+</p>
+                        <p class="text-sm text-gray-400">Projected Persian-speaking global reach</p>
+                    </div>
+                    <div class="section-card p-4 rounded-xl">
+                        <p class="text-4xl font-extrabold text-yellow-400">500K+</p>
+                        <p class="text-sm text-gray-400">Social media engagement & organic growth</p>
+                    </div>
+                    <div class="section-card p-4 rounded-xl">
+                        <p class="text-4xl font-extrabold text-yellow-400">25%</p>
+                        <p class="text-sm text-gray-400">Expected ROI (Based on comparable formats)</p>
+                    </div>
+                </div>
+
+                <h4 class="text-2xl font-bold text-gray-300 mb-4 border-b border-gray-700 pb-2">✅ Investment Timeline & Milestones</h4>
+                <div class="section-card p-6 rounded-xl space-y-4">
+                    <div class="flex items-start">
+                        <span class="text-3xl text-[#2ea44f] mr-4">1–2</span>
+                        <div>
+                            <p class="font-bold text-white">Month 1–2</p>
+                            <p class="text-sm text-gray-400">Pre-Production, Scouting, Casting</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-3xl text-[#2ea44f] mr-4">3</span>
+                        <div>
+                            <p class="font-bold text-white">Month 3</p>
+                            <p class="text-sm text-gray-400">Production & Challenge Filming</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-3xl text-[#2ea44f] mr-4">4–5</span>
+                        <div>
+                            <p class="font-bold text-white">Month 4–5</p>
+                            <p class="text-sm text-gray-400">Post-Production, Editing, Marketing Rollout</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="text-3xl text-[#2ea44f] mr-4">6+</span>
+                        <div>
+                            <p class="font-bold text-white">Month 6+</p>
+                            <p class="text-sm text-gray-400">Broadcast, Digital Monetization & ROI Distribution</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END OF INVESTMENT & SPONSORSHIP SECTION -->
+
 </div>
 
 <script>
-    // Budget data structure updated for $554,950 total
-    const TOTAL_BUDGET = 554950;
+    // Budget data structure updated for $567,350 total
+    const TOTAL_BUDGET = 567350;
 
     const budgetData = [
         { name: '1. PRE-PRODUCTION', cost: 33000, percentage: (33000 / TOTAL_BUDGET) * 100 },
-        { name: '2. PRODUCTION', cost: 293750, percentage: (293750 / TOTAL_BUDGET) * 100 }, // UPDATED COST
+        { name: '2. PRODUCTION', cost: 306150, percentage: (306150 / TOTAL_BUDGET) * 100 },
         { name: '3. POST-PRODUCTION (30 Episodes)', cost: 163800, percentage: (163800 / TOTAL_BUDGET) * 100 },
         { name: '4. MARKETING & DISTRIBUTION', cost: 33600, percentage: (33600 / TOTAL_BUDGET) * 100 },
         { name: '5. LEGAL & ACCOUNTING', cost: 10800, percentage: (10800 / TOTAL_BUDGET) * 100 },
@@ -257,10 +501,10 @@
     // Helper function to calculate percentage
     const calculatePerc = (cost) => (cost / TOTAL_BUDGET) * 100;
 
-    // --- Detailed Production Data (17 Items) ---
+    // --- Detailed Production Data (18 Items) ---
     const productionItems = [
         // 2.1
-        { item: '2.1 HOST Salary (Reza Maddadi)', cost: 61700, percentage: calculatePerc(61700), icon: '🎤', 
+        { item: '2.1 HOST FEES', cost: 61700, percentage: calculatePerc(61700), icon: '🎤', 
           breakdown: [
             { name: 'Anchor presenter (fixed salary)', cost: 61700, perc: calculatePerc(61700) }
           ]
@@ -320,19 +564,19 @@
           ]
         },
         // 2.9
-        { item: '2.9 GYM RENTAL', cost: 10000, percentage: calculatePerc(10000), icon: '🏋️', 
+        { item: '2.9 GYM RENTAL (10 days)', cost: 10000, percentage: calculatePerc(10000), icon: '🏋️', 
           breakdown: [
             { name: '10 days access to training facility', cost: 10000, perc: calculatePerc(10000) }
           ]
         },
-        // 2.10 - UPDATED DETAIL AND COST
-        { item: '2.10 ACCOMMODATION', cost: 28200, percentage: calculatePerc(28200), icon: '🏠', 
+        // 2.10
+        { item: '2.10 ACCOMMODATION', cost: 30000, percentage: calculatePerc(30000), icon: '🏠', 
           breakdown: [
-            { name: 'Main Accommodation (Villas A/B, Apartments)', cost: 22400, perc: calculatePerc(22400) },
-            { name: 'Hotel Nights for Travel Days', cost: 3200, perc: calculatePerc(3200) },
-            { name: 'Airbnb / Booking Platform Fees', cost: 1200, perc: calculatePerc(1200) },
-            { name: 'Damage Insurance / Deposits', cost: 1000, perc: calculatePerc(1000) },
-            { name: 'Local Taxes & Tourist Fees', cost: 400, perc: calculatePerc(400) },
+            { name: 'Villas/apartments', cost: 22400, perc: calculatePerc(22400) },
+            { name: 'Hotels (travel days)', cost: 3200, perc: calculatePerc(3200) },
+            { name: 'Booking fees', cost: 1200, perc: calculatePerc(1200) },
+            { name: 'Damage deposit', cost: 1000, perc: calculatePerc(1000) },
+            { name: 'Tourist tax', cost: 400, perc: calculatePerc(400) },
           ]
         },
         // 2.11
@@ -344,11 +588,7 @@
         // 2.12
         { item: '2.12 TRANSPORTATION', cost: 35500, percentage: calculatePerc(35500), icon: '🚌', 
           breakdown: [
-            { name: '2× Vans (28 days)', cost: 7000, perc: calculatePerc(7000) },
-            { name: 'Production car', cost: 1500, perc: calculatePerc(1500) },
-            { name: 'Fuel (28 days)', cost: 3500, perc: calculatePerc(3500) },
-            { name: 'Airport transfers', cost: 1500, perc: calculatePerc(1500) },
-            { name: 'Logistics truck', cost: 1500, perc: calculatePerc(1500) },
+            { name: 'Vans / Production car / Truck / Fuel', cost: 25000, perc: calculatePerc(25000) },
             { name: 'Competitor flights', cost: 7500, perc: calculatePerc(7500) },
             { name: 'Crew flights', cost: 3000, perc: calculatePerc(3000) },
           ]
@@ -356,7 +596,7 @@
         // 2.13
         { item: '2.13 EQUIPMENT RENTAL', cost: 15000, percentage: calculatePerc(15000), icon: '⚙️', 
           breakdown: [
-            { name: 'Cameras + Lenses', cost: 6500, perc: calculatePerc(6500) },
+            { name: 'Cameras/lenses', cost: 6500, perc: calculatePerc(6500) },
             { name: 'Audio gear', cost: 2000, perc: calculatePerc(2000) },
             { name: 'Lighting kit', cost: 1500, perc: calculatePerc(1500) },
             { name: 'GoPros / Action Gear', cost: 1500, perc: calculatePerc(1500) },
@@ -397,6 +637,15 @@
             { name: 'Obstacle repairs / maintenance', cost: 3500, perc: calculatePerc(3500) },
             { name: 'Media cards & batteries', cost: 2270, perc: calculatePerc(2270) },
             { name: 'Emergency purchases', cost: 2500, perc: calculatePerc(2500) },
+          ]
+        },
+        // 2.18 (NEW ITEM)
+        { item: '2.18 LEAN BRANDING & WARDROBE', cost: 10600, percentage: calculatePerc(10600), icon: '👕', 
+          breakdown: [
+            { name: 'Athlete Clothing (3 tops each, logo only)', cost: 3600, perc: calculatePerc(3600) },
+            { name: 'Athlete Sweatshirts (1 each, logo only)', cost: 1200, perc: calculatePerc(1200) },
+            { name: 'Crew T-Shirts (2 per crew, print)', cost: 1800, perc: calculatePerc(1800) },
+            { name: 'Set Branding (Flags, banners, etc.)', cost: 4000, perc: calculatePerc(4000) },
           ]
         },
     ];
