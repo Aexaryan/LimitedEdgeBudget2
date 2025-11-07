@@ -1,1190 +1,736 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MASTER PRODUCTION BUDGET INFOGRAPHIC</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Add Chart.js CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display.swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0d1117; /* Dark background */
-            color: #c9d1d9; /* Light text */
-        }
-        .section-card {
-            background-color: #161b22; /* Slightly lighter dark card */
-            border: 1px solid #30363d;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .section-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
-        }
-        .progress-bar-bg {
-            background-color: #30363d;
-        }
-        .progress-bar-fill {
-            background-color: #2ea44f; /* Green accent color */
-            transition: width 1s ease-out;
-        }
-        .production-detail-card {
-            background-color: #21262d;
-            height: 100%; /* Ensure cards are uniform height */
-        }
-        .sub-category-header {
-            font-size: 0.9rem;
-            color: #8b949e;
-            font-weight: 600;
-            margin-top: 10px;
-            padding-top: 5px;
-            border-top: 1px dashed #30363d;
-        }
-        .breakdown-list {
-            margin-top: 8px;
-            padding-left: 0;
-            list-style: none;
-        }
-        .breakdown-list li {
-            font-size: 0.75rem;
-            color: #8b949e;
-            display: flex;
-            justify-content: space-between;
-            padding-top: 2px;
-        }
-        .breakdown-list .breakdown-cost {
-            font-weight: 500;
-            color: #c9d1d9;
-        }
-        .sponsorship-item {
-            display: flex;
-            flex-direction: column;
-            padding: 1rem;
-            border-bottom: 1px solid #30363d;
-        }
-        .sponsorship-item:last-child {
-            border-bottom: none;
-        }
-        /* Chart container styling */
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px; /* Max width for readability */
-            margin-left: auto;
-            margin-right: auto;
-            height: 300px; /* Default height */
-            max-height: 350px;
-        }
-        @media (min-width: 768px) {
-            .chart-container {
-                height: 350px;
-            }
-        }
-        /* Styled table */
-        .styled-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .styled-table th, .styled-table td {
-            padding: 12px 15px;
-            border: 1px solid #30363d;
-            text-align: left;
-        }
-        .styled-table thead th {
-            background-color: #161b22;
-            color: #8b949e;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-        }
-        .styled-table tbody tr:nth-child(even) {
-            background-color: #21262d;
-        }
-        .styled-table tbody tr:hover {
-            background-color: #30363d;
-        }
-        .styled-table td strong {
-            color: #2ea44f; /* Green accent */
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MASTER PRODUCTION BUDGET INFOGRAPHIC — Corrected ($634,270)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+    body{font-family:'Inter',sans-serif;background:#0d1117;color:#c9d1d9}
+    .section-card{background:#161b22;border:1px solid #30363d;box-shadow:0 4px 6px rgba(0,0,0,.2);transition:.3s}
+    .section-card:hover{transform:translateY(-2px);box-shadow:0 8px 12px rgba(0,0,0,.4)}
+    .progress-bar-bg{background:#30363d}
+    .progress-bar-fill{background:#2ea44f;transition:width 1s ease-out}
+    .production-detail-card{background:#21262d;height:100%}
+    .sub-category-header{font-size:.9rem;color:#8b949e;font-weight:600;margin-top:10px;padding-top:5px;border-top:1px dashed #30363d}
+    .breakdown-list{margin-top:8px;list-style:none;padding-left:0}
+    .breakdown-list li{font-size:.8rem;color:#8b949e;display:flex;justify-content:space-between;padding-top:2px}
+    .breakdown-list .breakdown-cost{font-weight:600;color:#c9d1d9}
+    .sponsorship-item{display:flex;flex-direction:column;padding:1rem;border-bottom:1px solid #30363d}
+    .sponsorship-item:last-child{border-bottom:none}
+    .chart-container{position:relative;width:100%;max-width:800px;margin-left:auto;margin-right:auto;height:320px;max-height:400px}
+    @media(min-width:768px){.chart-container{height:350px}}
+    .styled-table{width:100%;border-collapse:collapse}
+    .styled-table th,.styled-table td{padding:12px 15px;border:1px solid #30363d;text-align:left}
+    .styled-table thead th{background:#161b22;color:#8b949e;font-weight:600;text-transform:uppercase;font-size:.8rem}
+    .styled-table tbody tr:nth-child(even){background:#21262d}
+    .styled-table tbody tr:hover{background:#30363d}
+    .styled-table td strong{color:#2ea44f}
+  </style>
 </head>
 <body>
-
 <div class="container mx-auto p-4 sm:p-8 lg:p-12">
-    <header class="text-center mb-10">
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#2ea44f] mb-2">LIMIT EDGE — MASTER PRODUCTION BUDGET (REVISED)</h1>
-        <h2 class="text-xl sm:text-2xl font-light text-gray-400">Total Project Value: $634,270</h2>
-        <div class="h-1 w-24 bg-gray-600 mx-auto mt-4 rounded-full"></div>
-    </header>
+  <header class="text-center mb-10">
+    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#2ea44f] mb-2">LIMIT EDGE — MASTER PRODUCTION BUDGET (REVISED)</h1>
+    <h2 class="text-xl sm:text-2xl font-light text-gray-400">Total Project Value: $634,270</h2>
+    <div class="h-1 w-24 bg-gray-600 mx-auto mt-4 rounded-full"></div>
+  </header>
 
-    <!-- Grand Total -->
-    <div class="section-card p-6 mb-10 rounded-xl text-center">
-        <p class="text-lg font-semibold text-gray-400">GRAND TOTAL BUDGET ALLOCATION</p>
-        <p class="text-5xl sm:text-6xl font-black text-white mt-2 mb-1">$634,270</p>
-        <p class="text-xl font-bold text-[#2ea44f]">(100%)</p>
+  <!-- Grand Total -->
+  <div class="section-card p-6 mb-10 rounded-xl text-center">
+    <p class="text-lg font-semibold text-gray-400">GRAND TOTAL BUDGET ALLOCATION</p>
+    <p class="text-5xl sm:text-6xl font-black text-white mt-2 mb-1">$634,270</p>
+    <p class="text-xl font-bold text-[#2ea44f]">(100%)</p>
+  </div>
+
+  <!-- Main Category Overview -->
+  <div class="mb-12">
+    <h3 class="text-2xl font-bold text-gray-300 mb-6 border-b border-gray-700 pb-2">6 Major Budget Categories</h3>
+    <div id="main-budget-bars" class="space-y-4"></div>
+  </div>
+
+  <!-- Detailed Breakdowns for 1, 3, 4, 5, 6 -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <!-- 1. Pre-Production Details -->
+    <div class="lg:col-span-1">
+      <h3 class="text-xl font-bold text-gray-300 mb-4 border-b border-gray-700 pb-2">1. Pre-Production ($64,000 / 10.09%)</h3>
+      <p class="text-sm text-gray-500 mb-3">Includes 2 months of core staff salaries for planning and development.</p>
+      <div class="section-card p-4 rounded-lg space-y-2">
+        <div class="sub-category-header mt-0 border-t-0 text-yellow-400">1.7 Core Creative Salaries (2 Months) ($40,000 / 6.31%)</div>
+        <ul class="breakdown-list space-y-1 mt-1">
+          <li><span class="breakdown-name">Producer (2 mo. @ 100%)</span><span class="breakdown-cost">$20,000 <span class="text-xs text-[#2ea44f]">(3.15%)</span></span></li>
+          <li><span class="breakdown-name">Director (2 mo. @ 50%)</span><span class="breakdown-cost">$10,000 <span class="text-xs text-[#2ea44f]">(1.58%)</span></span></li>
+          <li><span class="breakdown-name">Script Writer (2 mo. @ 50%)</span><span class="breakdown-cost">$10,000 <span class="text-xs text-[#2ea44f]">(1.58%)</span></span></li>
+        </ul>
+        <div class="sub-category-header">1.2 Casting & Talent Prep ($2,000 / 0.32%)</div>
+        <ul class="breakdown-list space-y-1 mt-1">
+          <li><span class="breakdown-name">Athlete casting & interviews</span><span class="breakdown-cost">$1,000 <span class="text-xs text-[#2ea44f]">(0.16%)</span></span></li>
+          <li><span class="breakdown-name">Host casting</span><span class="breakdown-cost">$500 <span class="text-xs text-[#2ea44f]">(0.08%)</span></span></li>
+          <li><span class="breakdown-name">Extras / walk-ons</span><span class="breakdown-cost">$500 <span class="text-xs text-[#2ea44f]">(0.08%)</span></span></li>
+        </ul>
+        <div class="sub-category-header">1.3 Location Scouting ($5,500 / 0.87%)</div>
+        <ul class="breakdown-list space-y-1 mt-1">
+          <li><span class="breakdown-name">Travel (Spain scouting)</span><span class="breakdown-cost">$3,000 <span class="text-xs text-[#2ea44f]">(0.47%)</span></span></li>
+          <li><span class="breakdown-name">Accommodation (scouting)</span><span class="breakdown-cost">$1,500 <span class="text-xs text-[#2ea44f]">(0.24%)</span></span></li>
+          <li><span class="breakdown-name">Fixer / location consultant</span><span class="breakdown-cost">$1,000 <span class="text-xs text-[#2ea44f]">(0.16%)</span></span></li>
+        </ul>
+        <div class="sub-category-header">1.4 Set & Obstacle Engineering ($12,000 / 1.89%)</div>
+        <ul class="breakdown-list space-y-1 mt-1">
+          <li><span class="breakdown-name">Water challenge engineering</span><span class="breakdown-cost">$4,000 <span class="text-xs text-[#2ea44f]">(0.63%)</span></span></li>
+          <li><span class="breakdown-name">Construction materials</span><span class="breakdown-cost">$5,000 <span class="text-xs text-[#2ea44f]">(0.79%)</span></span></li>
+          <li><span class="breakdown-name">Platforms / sand / site setup</span><span class="breakdown-cost">$2,000 <span class="text-xs text-[#2ea44f]">(0.32%)</span></span></li>
+          <li><span class="breakdown-name">Safety ropes & padding</span><span class="breakdown-cost">$1,000 <span class="text-xs text-[#2ea44f]">(0.16%)</span></span></li>
+        </ul>
+        <div class="sub-category-header">1.6 Marketing Prep (teaser assets) ($4,500 / 0.71%)</div>
+      </div>
     </div>
 
-    <!-- Main Category Overview -->
-    <div class="mb-12">
-        <h3 class="text-2xl font-bold text-gray-300 mb-6 border-b border-gray-700 pb-2">6 Major Budget Categories</h3>
-        <div id="main-budget-bars" class="space-y-4">
-            <!-- Bars will be inserted here by JavaScript -->
-        </div>
+    <!-- 3. Post-Production -->
+    <div class="lg:col-span-1">
+      <h3 class="text-xl font-bold text-gray-300 mb-4 border-b border-gray-700 pb-2">3. Post-Production ($183,800 / 28.98%)</h3>
+      <p class="text-sm text-gray-500 mb-3">Includes 2 months of core staff oversight and half-time salaries.</p>
+      <div class="section-card p-4 rounded-lg space-y-3">
+        <div class="sub-category-header mt-0 border-t-0 text-yellow-400">3.7 Core Creative Oversight (2 Months) ($20,000 / 3.15%)</div>
+        <ul class="breakdown-list space-y-1 mt-1">
+          <li><span class="breakdown-name">Producer (2 mo. @ 50%)</span><span class="breakdown-cost">$10,000 <span class="text-xs text-[#2ea44f]">(1.58%)</span></span></li>
+          <li><span class="breakdown-name">Director (2 mo. @ 50%)</span><span class="breakdown-cost">$10,000 <span class="text-xs text-[#2ea44f]">(1.58%)</span></span></li>
+          <li><span class="breakdown-name">Script Writer / PM (0%)</span><span class="breakdown-cost">$0 <span class="text-xs text-[#2ea44f]">(0.00%)</span></span></li>
+        </ul>
+        <div class="sub-category-header">3.1 Editing ($86,000 / 13.56%)</div>
+        <ul class="breakdown-list space-y-1 mt-1">
+          <li><span class="breakdown-name">Lead editor</span><span class="breakdown-cost">$61,000 <span class="text-xs text-[#2ea44f]">(9.62%)</span></span></li>
+          <li><span class="breakdown-name">Assistant editor</span><span class="breakdown-cost">$25,000 <span class="text-xs text-[#2ea44f]">(3.94%)</span></span></li>
+        </ul>
+        <div class="sub-category-header">3.2 Sound ($24,000 / 3.78%)</div>
+        <div class="sub-category-header">3.3 Music Licensing ($4,000 / 0.63%)</div>
+        <div class="sub-category-header">3.4 Color Grading ($21,000 / 3.31%)</div>
+        <div class="sub-category-header">3.5 Motion Graphics & Titles ($18,000 / 2.84%)</div>
+        <div class="sub-category-header">3.6 Mastering / QC / Deliverables ($10,800 / 1.70%)</div>
+      </div>
     </div>
 
-    <!-- Detailed Breakdowns for 1, 3, 4, 5, 6 -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        
-        <!-- 1. Pre-Production Details -->
-        <div class="lg:col-span-1">
-            <h3 class="text-xl font-bold text-gray-300 mb-4 border-b border-gray-700 pb-2">1. Pre-Production ($64,000 / 10.09%)</h3>
-            <p class="text-sm text-gray-500 mb-3">Includes 2 months of core staff salaries for planning and development.</p>
-            <div class="section-card p-4 rounded-lg space-y-2">
-                
-                <!-- 1.7 NEW: CORE CREATIVE SALARIES -->
-                <div class="sub-category-header mt-0 border-t-0 text-yellow-400">1.7 Core Creative Salaries (2 Months) ($40,000 / 6.31%)</div>
-                <ul class="breakdown-list space-y-1 mt-1">
-                    <li><span class="breakdown-name">Producer (2 mo. @ 100%)</span><span class="breakdown-cost">$20,000 <span class="text-xs text-[#2ea44f]">(3.15%)</span></span></li>
-                    <li><span class="breakdown-name">Director (2 mo. @ 50%)</span><span class="breakdown-cost">$10,000 <span class="text-xs text-[#2ea44f]">(1.58%)</span></span></li>
-                    <li><span class="breakdown-name">Script Writer (2 mo. @ 50%)</span><span class="breakdown-cost">$10,000 <span class="text-xs text-[#2ea44f]">(1.58%)</span></span></li>
-                </ul>
-                
-                <!-- 1.2 CASTING & TALENT PREP -->
-                <div class="sub-category-header">1.2 Casting & Talent Prep ($2,000 / 0.32%)</div>
-                 <ul class="breakdown-list space-y-1 mt-1">
-                    <li><span class="breakdown-name">Athlete casting & interviews</span><span class="breakdown-cost">$1,000 <span class="text-xs text-[#2ea44f]">(0.16%)</span></span></li>
-                    <li><span class="breakdown-name">Host casting</span><span class="breakdown-cost">$500 <span class="text-xs text-[#2ea44f]">(0.08%)</span></span></li>
-                    <li><span class="breakdown-name">Extras / walk-ons</span><span class="breakdown-cost">$500 <span class="text-xs text-[#2ea44f]">(0.08%)</span></span></li>
-                </ul>
+    <!-- 4. Marketing & 5. Legal -->
+    <div class="lg:col-span-1">
+      <h3 class="text-xl font-bold text-gray-300 mb-4 border-b border-gray-700 pb-2">4. Marketing & 5. Legal</h3>
+      <div class="section-card p-4 rounded-lg space-y-3">
+        <div class="text-lg font-semibold text-[#2ea44f]">4. Marketing & Distribution ($33,600 / 5.30%)</div>
+        <div class="sub-category-header mt-0 border-t-0">4.1 PR & Media Buying ($15,000 / 2.36%)</div>
+        <div class="sub-category-header">4.2 Social Media Campaigns ($8,000 / 1.26%)</div>
+        <div class="sub-category-header">4.3 Trailer & Advertising Materials ($10,600 / 1.67%)</div>
+        <div class="h-px bg-gray-700 my-2"></div>
+        <div class="text-lg font-semibold text-[#2ea44f]">5. Legal & Accounting ($10,800 / 1.70%)</div>
+        <div class="sub-category-header mt-0 border-t-0">5.1 Legal ($6,000 / 0.95%)</div>
+        <div class="sub-category-header">5.2 Accounting ($4,800 / 0.76%)</div>
+      </div>
+    </div>
+  </div>
 
-                <!-- 1.3 LOCATION SCOUTING -->
-                <div class="sub-category-header">1.3 Location Scouting ($5,500 / 0.87%)</div>
-                 <ul class="breakdown-list space-y-1 mt-1">
-                    <li><span class="breakdown-name">Travel (Spain scouting)</span><span class="breakdown-cost">$3,000 <span class="text-xs text-[#2ea44f]">(0.47%)</span></span></li>
-                    <li><span class="breakdown-name">Accommodation (scouting)</span><span class="breakdown-cost">$1,500 <span class="text-xs text-[#2ea44f]">(0.24%)</span></span></li>
-                    <li><span class="breakdown-name">Fixer / location consultant</span><span class="breakdown-cost">$1,000 <span class="text-xs text-[#2ea44f]">(0.16%)</span></span></li>
-                </ul>
-                
-                <!-- 1.4 SET / OBSTACLE ENGINEERING -->
-                <div class="sub-category-header">1.4 Set & Obstacle Engineering ($12,000 / 1.89%)</div>
-                 <ul class="breakdown-list space-y-1 mt-1">
-                    <li><span class="breakdown-name">Water challenge engineering</span><span class="breakdown-cost">$4,000 <span class="text-xs text-[#2ea44f]">(0.63%)</span></span></li>
-                    <li><span class="breakdown-name">Construction materials</span><span class="breakdown-cost">$5,000 <span class="text-xs text-[#2ea44f]">(0.79%)</span></span></li>
-                    <li><span class="breakdown-name">Platforms / sand / site setup</span><span class="breakdown-cost">$2,000 <span class="text-xs text-[#2ea44f]">(0.32%)</span></span></li>
-                    <li><span class="breakdown-name">Safety ropes & padding</span><span class="breakdown-cost">$1,000 <span class="text-xs text-[#2ea44f]">(0.16%)</span></span></li>
-                </ul>
-                
-                <!-- 1.6 MARKETING PREP -->
-                <div class="sub-category-header">1.6 Marketing Prep (teaser assets) ($4,500 / 0.71%)</div>
-                
-            </div>
-        </div>
+  <!-- 2. Production Details -->
+  <div class="mt-12">
+    <h3 class="text-2xl font-bold text-gray-300 mb-6 border-b border-yellow-500 pb-2">2. PRODUCTION: THE CORE EXPENDITURE ($332,070 / 52.35%) <span class="text-yellow-400 text-sm">(Adjusted Cost & Team)</span></h3>
+    <p class="text-gray-400 mb-6">28 days of full operation, now including dedicated 1-month full-time salaries for all four core staff members.</p>
+    <div id="production-details" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+  </div>
 
-        <!-- 3. Post-Production -->
-        <div class="lg:col-span-1">
-            <h3 class="text-xl font-bold text-gray-300 mb-4 border-b border-gray-700 pb-2">3. Post-Production ($183,800 / 28.98%)</h3>
-            <p class="text-sm text-gray-500 mb-3">Includes 2 months of core staff oversight and half-time salaries.</p>
-            <div class="section-card p-4 rounded-lg space-y-3">
-                
-                <!-- 3.7 NEW: CORE CREATIVE OVERSIGHT -->
-                <div class="sub-category-header mt-0 border-t-0 text-yellow-400">3.7 Core Creative Oversight (2 Months) ($20,000 / 3.15%)</div>
-                <ul class="breakdown-list space-y-1 mt-1">
-                    <li><span class="breakdown-name">Producer (2 mo. @ 50%)</span><span class="breakdown-cost">$10,000 <span class="text-xs text-[#2ea44f]">(1.58%)</span></span></li>
-                    <li><span class="breakdown-name">Director (2 mo. @ 50%)</span><span class="breakdown-cost">$10,000 <span class="text-xs text-[#2ea44f]">(1.58%)</span></span></li>
-                    <li><span class="breakdown-name">Script Writer / PM (0%)</span><span class="breakdown-cost">$0 <span class="text-xs text-[#2ea44f]">(0.00%)</span></span></li>
-                </ul>
-                
-                <div class="sub-category-header">3.1 Editing ($86,000 / 13.56%)</div>
-                <ul class="breakdown-list space-y-1 mt-1">
-                    <li><span class="breakdown-name">Lead editor</span><span class="breakdown-cost">$61,000 <span class="text-xs text-[#2ea44f]">(9.62%)</span></span></li>
-                    <li><span class="breakdown-name">Assistant editor</span><span class="breakdown-cost">$25,000 <span class="text-xs text-[#2ea44f]">(3.94%)</span></span></li>
-                </ul>
-
-                <div class="sub-category-header">3.2 Sound ($24,000 / 3.78%)</div>
-                <div class="sub-category-header">3.3 Music Licensing ($4,000 / 0.63%)</div>
-                <div class="sub-category-header">3.4 Color Grading ($21,000 / 3.31%)</div>
-                <div class="sub-category-header">3.5 Motion Graphics & Titles ($18,000 / 2.84%)</div>
-                <div class="sub-category-header">3.6 Mastering / QC / Deliverables ($10,800 / 1.70%)</div>
-
-                <div class="h-px bg-gray-700 my-4"></div>
-                
-                <!-- 6. Contingency -->
-                <div class="text-lg font-semibold text-[#2ea44f]">6. Contingency (Risk Fund) ($20,000 / 3.15%)</div>
-                <div class="text-sm text-gray-500 mb-1">Covers unexpected costs, set at 3.15% of total.</div>
-            </div>
-        </div>
-
-        <!-- 4. Marketing & 5. Legal -->
-        <div class="lg:col-span-1">
-            <h3 class="text-xl font-bold text-gray-300 mb-4 border-b border-gray-700 pb-2">4. Marketing & 5. Legal</h3>
-            <div class="section-card p-4 rounded-lg space-y-3">
-                
-                <!-- 4. MARKETING & DISTRIBUTION -->
-                <div class="text-lg font-semibold text-[#2ea44f]">4. Marketing & Distribution ($33,600 / 5.30%)</div>
-                <div class="sub-category-header mt-0 border-t-0">4.1 PR & Media Buying ($15,000 / 2.36%)</div>
-                <div class="sub-category-header">4.2 Social Media Campaigns ($8,000 / 1.26%)</div>
-                <div class="sub-category-header">4.3 Trailer & Advertising Materials ($10,600 / 1.67%)</div>
-                
-                <div class="h-px bg-gray-700 my-2"></div>
-                
-                <!-- 5. LEGAL & ACCOUNTING -->
-                <div class="text-lg font-semibold text-[#2ea44f]">5. Legal & Accounting ($10,800 / 1.70%)</div>
-                <div class="sub-category-header mt-0 border-t-0">5.1 Legal ($6,000 / 0.95%)</div>
-                <div class="sub-category-header">5.2 Accounting ($4,800 / 0.76%)</div>
-            </div>
-        </div>
+  <!-- INVESTMENT & SPONSORSHIP SECTION -->
+  <div class="mt-16 pt-8 border-t border-gray-700">
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-[#2ea44f] mb-2 text-center">LIMIT EDGE REALITY SHOW</h2>
+    <h3 class="text-xl sm:text-2xl font-bold text-gray-300 mb-4 text-center">Investment Tiers, Benefits & Sponsorship Opportunities</h3>
+    <div class="section-card p-6 mb-8 rounded-xl text-center bg-yellow-900/20 border-yellow-500/50">
+      <p class="text-xl font-semibold text-gray-300">Total Project Value:</p>
+      <p class="text-5xl font-black text-yellow-400 mt-2">$634,270</p>
+      <p class="text-sm font-light text-gray-400 mt-2">Required Cash Investment: <strong class="text-white">$150,000</strong></p>
     </div>
 
-    <!-- 2. Production Details (The largest segment) -->
-    <div class="mt-12">
-        <h3 class="text-2xl font-bold text-gray-300 mb-6 border-b border-yellow-500 pb-2">2. PRODUCTION: THE CORE EXPENDITURE ($322,070 / 50.78%) <span class="text-yellow-400 text-sm">(Adjusted Cost & Team)</span></h3>
-        <p class="text-gray-400 mb-6">28 days of full operation, now including dedicated 1-month full-time salaries for all four core staff members.</p>
-        <div id="production-details" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Production details will be inserted here by JavaScript -->
-        </div>
+    <h4 class="text-2xl font-bold text-gray-300 mb-6 border-b border-gray-700 pb-2">✅ Investment Tiers & Benefits</h4>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+      <div class="section-card p-6 rounded-xl border-t-4 border-amber-600">
+        <p class="text-4xl mb-3">🥉</p>
+        <h5 class="text-xl font-bold text-amber-600 mb-2">Bronze Tier — $10,000</h5>
+        <ul class="text-sm list-disc pl-5 space-y-1 text-gray-400">
+          <li>Logo placement on <strong>equipment</strong></li>
+          <li>Social media <strong>mentions</strong></li>
+          <li>Basic performance reports</li>
+          <li>Brand recognition tracking</li>
+          <li>Monthly progress updates</li>
+        </ul>
+      </div>
+      <div class="section-card p-6 rounded-xl border-t-4 border-gray-400">
+        <p class="text-4xl mb-3">🥈</p>
+        <h5 class="text-xl font-bold text-gray-400 mb-2">Silver Tier — $25,000</h5>
+        <ul class="text-sm list-disc pl-5 space-y-1 text-gray-400">
+          <li>Logo placement on <strong>athlete clothing</strong></li>
+          <li>Product placement in challenges</li>
+          <li>Detailed analytics reports</li>
+          <li>Audience engagement metrics</li>
+          <li>Post-show follow-up campaigns</li>
+          <li>Quarterly investor meetings</li>
+        </ul>
+      </div>
+      <div class="section-card p-6 rounded-xl border-t-4 border-yellow-500">
+        <p class="text-4xl mb-3">🥇</p>
+        <h5 class="text-xl font-bold text-yellow-500 mb-2">Gold Tier — $50,000+</h5>
+        <ul class="text-sm list-disc pl-5 space-y-1 text-gray-400">
+          <li><strong>Premium</strong> logo placement</li>
+          <li>Exclusive product integration</li>
+          <li>Custom marketing campaigns</li>
+          <li>Real-time performance tracking</li>
+          <li>Priority access for future seasons</li>
+          <li><strong>Executive Producer</strong> credit</li>
+          <li>Direct access to production team</li>
+        </ul>
+      </div>
     </div>
 
-    <!-- START OF INVESTMENT & SPONSORSHIP SECTION -->
-    <div class="mt-16 pt-8 border-t border-gray-700">
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#2ea44f] mb-2 text-center">LIMIT EDGE REALITY SHOW</h2>
-        <h3 class="text-xl sm:text-2xl font-bold text-gray-300 mb-4 text-center">Investment Tiers, Benefits & Sponsorship Opportunities</h3>
-        <div class="section-card p-6 mb-8 rounded-xl text-center bg-yellow-900/20 border-yellow-500/50">
-            <p class="text-xl font-semibold text-gray-300">Total Project Value:</p>
-            <p class="text-5xl font-black text-yellow-400 mt-2">$567,350</p>
-            <p class="text-sm font-light text-gray-400 mt-2">Required Cash Investment: <strong class="text-white">$150,000</strong></p>
-        </div>
+    <h4 class="text-2xl font-bold text-gray-300 mb-6 border-b border-gray-700 pb-2">✅ Detailed Investment & Sponsorship Structure</h4>
+    <div class="space-y-4">
+      <div class="grid grid-cols-4 md:grid-cols-5 text-xs sm:text-sm font-semibold text-center border-b border-gray-600 pb-2 text-[#2ea44f] uppercase">
+        <div class="col-span-1">Level</div>
+        <div class="col-span-1">Contribution (USD)</div>
+        <div class="hidden md:block">Covers / Role</div>
+        <div class="col-span-2 md:col-span-1">Deliverables</div>
+        <div class="hidden md:block">ROI / Benefits</div>
+      </div>
 
-        <!-- 1. Investment Tiers -->
-        <h4 class="text-2xl font-bold text-gray-300 mb-6 border-b border-gray-700 pb-2">✅ Investment Tiers & Benefits</h4>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <!-- Bronze Tier -->
-            <div class="section-card p-6 rounded-xl border-t-4 border-amber-600">
-                <p class="text-4xl mb-3">🥉</p>
-                <h5 class="text-xl font-bold text-amber-600 mb-2">Bronze Tier — $10,000</h5>
-                <ul class="text-sm list-disc pl-5 space-y-1 text-gray-400">
-                    <li>Logo placement on **equipment**</li>
-                    <li>Social media **mentions**</li>
-                    <li>Basic performance reports</li>
-                    <li>Brand recognition tracking</li>
-                    <li>Monthly progress updates</li>
-                </ul>
-            </div>
-            <!-- Silver Tier -->
-            <div class="section-card p-6 rounded-xl border-t-4 border-gray-400">
-                <p class="text-4xl mb-3">🥈</p>
-                <h5 class="text-xl font-bold text-gray-400 mb-2">Silver Tier — $25,000</h5>
-                <ul class="text-sm list-disc pl-5 space-y-1 text-gray-400">
-                    <li>Logo placement on **athlete clothing**</li>
-                    <li>Product placement in challenges</li>
-                    <li>Detailed analytics reports</li>
-                    <li>Audience engagement metrics</li>
-                    <li>Post-show follow-up campaigns</li>
-                    <li>Quarterly investor meetings</li>
-                </ul>
-            </div>
-            <!-- Gold Tier -->
-            <div class="section-card p-6 rounded-xl border-t-4 border-yellow-500">
-                <p class="text-4xl mb-3">🥇</p>
-                <h5 class="text-xl font-bold text-yellow-500 mb-2">Gold Tier — $50,000+</h5>
-                <ul class="text-sm list-disc pl-5 space-y-1 text-gray-400">
-                    <li>**Premium** logo placement</li>
-                    <li>Exclusive product integration</li>
-                    <li>Custom marketing campaigns</li>
-                    <li>Real-time performance tracking</li>
-                    <li>Priority access for future seasons</li>
-                    <li>**Executive Producer** credit</li>
-                    <li>Direct access to production team</li>
-                </ul>
-            </div>
-        </div>
+      <div class="sponsorship-item grid grid-cols-4 md:grid-cols-5 text-sm">
+        <div class="font-bold text-white col-span-1">50% Investor (Equity Option)</div>
+        <div class="text-yellow-400 col-span-1">$317,135</div>
+        <div class="hidden md:block text-gray-500">Covers 50% of the total project cost ($634,270)</div>
+        <div class="col-span-2 md:col-span-1 text-gray-300">• 50% equity in profits • Co-production credit</div>
+        <div class="hidden md:block text-[#2ea44f]">Proportional upside in all revenue streams</div>
+      </div>
 
-        <!-- 2. Detailed Sponsorship Structure -->
-        <h4 class="text-2xl font-bold text-gray-300 mb-6 border-b border-gray-700 pb-2">✅ Detailed Investment & Sponsorship Structure</h4>
-        <div class="space-y-4">
-            <!-- Table row structure using grid for responsiveness -->
-            <div class="grid grid-cols-4 md:grid-cols-5 text-xs sm:text-sm font-semibold text-center border-b border-gray-600 pb-2 text-[#2ea44f] uppercase">
-                <div class="col-span-1">Level</div>
-                <div class="col-span-1">Contribution (USD)</div>
-                <div class="hidden md:block">Covers / Role</div>
-                <div class="col-span-2 md:col-span-1">Deliverables</div>
-                <div class="hidden md:block">ROI / Benefits</div>
-            </div>
+      <div class="sponsorship-item grid grid-cols-4 md:grid-cols-5 text-sm">
+        <div class="font-bold text-white col-span-1">25% Investor (Equity Option)</div>
+        <div class="text-yellow-400 col-span-1">$158,568</div>
+        <div class="hidden md:block text-gray-500">Covers 25% of the total project cost ($634,270)</div>
+        <div class="col-span-2 md:col-span-1 text-gray-300">• 25% equity in profits • Associate Producer credit</div>
+        <div class="hidden md:block text-[#2ea44f]">Lower ticket; meaningful upside</div>
+      </div>
 
-            <!-- Data Rows (Investment contribution costs need updating based on the new total if percentages change, but since the user only provided the total investment, I will assume the tiers remain fixed) -->
-            <div class="sponsorship-item grid grid-cols-4 md:grid-cols-5 text-sm">
-                <div class="font-bold text-white col-span-1">Cash Investor (50/50 Equity)</div>
-                <div class="text-yellow-400 col-span-1">$150,000 (26.4% of total)</div>
-                <div class="hidden md:block text-gray-500">26.4% of total cash need</div>
-                <div class="col-span-2 md:col-span-1 text-gray-300">• 50% equity in profits • Co-production credit</div>
-                <div class="hidden md:block text-[#2ea44f]">High Cash-on-Cash ROI, equity in future seasons</div>
-            </div>
-             <div class="sponsorship-item grid grid-cols-4 md:grid-cols-5 text-sm">
-                <div class="font-bold text-white col-span-1">Production (In-Kind Value)</div>
-                <div class="text-yellow-400 col-span-1">$417,350 (73.6% of total)</div>
-                <div class="hidden md:block text-gray-500">73.6% in labor, deferred fees, assets</div>
-                <div class="col-span-2 md:col-span-1 text-gray-300">• 50% equity in profits • Full production control</div>
-                <div class="hidden md:block text-[#2ea44f]">Future value & asset ownership</div>
-            </div>
-            <div class="sponsorship-item grid grid-cols-4 md:grid-cols-5 text-sm">
-                <div class="font-bold text-white col-span-1">Title Sponsor</div>
-                <div class="text-yellow-400 col-span-1">$120,000</div>
-                <div class="hidden md:block text-gray-500">Major branding and marketing share</div>
-                <div class="col-span-2 md:col-span-1 text-gray-300">• “Presented by [Brand]” • Naming rights for main challenges</div>
-                <div class="hidden md:block text-[#2ea44f]">Maximum visibility & exclusivity</div>
-            </div>
-            <div class="sponsorship-item grid grid-cols-4 md:grid-cols-5 text-sm">
-                <div class="font-bold text-white col-span-1">Platinum Sponsor</div>
-                <div class="text-yellow-400 col-span-1">$75,000</div>
-                <div class="hidden md:block text-gray-500">Deep brand integration</div>
-                <div class="col-span-2 md:col-span-1 text-gray-300">• Logo in credits • Product placement • Behind-the-scenes features</div>
-                <div class="hidden md:block text-[#2ea44f]">High audience association</div>
-            </div>
-            <div class="sponsorship-item grid grid-cols-4 md:grid-cols-5 text-sm">
-                <div class="font-bold text-white col-span-1">Gold Sponsor</div>
-                <div class="text-yellow-400 col-span-1">$50,000</div>
-                <div class="hidden md:block text-gray-500">Challenge branding</div>
-                <div class="col-span-2 md:col-span-1 text-gray-300">• Prominent logo on set • Social media pushes</div>
-                <div class="hidden md:block text-[#2ea44f]">Broad, high-value visibility</div>
-            </div>
-            <div class="sponsorship-item grid grid-cols-4 md:grid-cols-5 text-sm">
-                <div class="font-bold text-white col-span-1">Silver Sponsor</div>
-                <div class="text-yellow-400 col-span-1">$25,000</div>
-                <div class="hidden md:block text-gray-500">Props & PR support</div>
-                <div class="col-span-2 md:col-span-1 text-gray-300">• Logo on props • Co-branded posts</div>
-                <div class="hidden md:block text-[#2ea44f]">Cost-effective exposure</div>
-            </div>
-            <div class="sponsorship-item grid grid-cols-4 md:grid-cols-5 text-sm">
-                <div class="font-bold text-white col-span-1">Bronze Sponsor</div>
-                <div class="text-yellow-400 col-span-1">$10,000</div>
-                <div class="hidden md:block text-gray-500">Credits & website</div>
-                <div class="col-span-2 md:col-span-1 text-gray-300">• Logo in end credits • Press release inclusions</div>
-                <div class="hidden md:block text-[#2ea44f]">Entry-level exposure</div>
-            </div>
-            <div class="sponsorship-item grid grid-cols-4 md:grid-cols-5 text-sm">
-                <div class="font-bold text-white col-span-1">Category Partner (Exclusive)</div>
-                <div class="text-yellow-400 col-span-1">$85,000</div>
-                <div class="hidden md:block text-gray-500">Product category exclusivity</div>
-                <div class="col-span-2 md:col-span-1 text-gray-300">• “Official [Product] of Limit Edge” • Daily product integration</div>
-                <div class="hidden md:block text-[#2ea44f]">Dominant niche presence</div>
-            </div>
-            <div class="sponsorship-item grid grid-cols-4 md:grid-cols-5 text-sm">
-                <div class="font-bold text-white col-span-1">Digital-Only Sponsor</div>
-                <div class="text-yellow-400 col-span-1">$5,000</div>
-                <div class="hidden md:block text-gray-500">Online-only</div>
-                <div class="col-span-2 md:col-span-1 text-gray-300">• Mentions in clips, hashtags • Digital product placements</div>
-                <div class="hidden md:block text-[#2ea44f]">High social media value</div>
-            </div>
-        </div>
+      <div class="sponsorship-item grid grid-cols-4 md:grid-cols-5 text-sm">
+        <div class="font-bold text-white col-span-1">Production (In-Kind / Deferred)</div>
+        <div class="text-yellow-400 col-span-1">$484,270 (76.4% of total)</div>
+        <div class="hidden md:block text-gray-500">Crew time, equipment, post, assets</div>
+        <div class="col-span-2 md:col-span-1 text-gray-300">• Full production control • Asset ownership</div>
+        <div class="hidden md:block text-[#2ea44f]">Future asset value & IP leverage</div>
+      </div>
 
-        <!-- 3. Benefits and Value Proposition -->
-        <h4 class="text-2xl font-bold text-gray-300 my-6 border-b border-gray-700 pb-2">✅ Investor Benefits & Value Proposition</h4>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Brand Exposure -->
-            <div class="section-card p-5 rounded-xl">
-                <h5 class="text-xl font-bold text-gray-200 mb-3 flex items-center"><span class="text-yellow-400 mr-2">⭐</span> Brand Exposure Opportunities</h5>
-                <ul class="text-sm list-disc pl-5 space-y-2 text-gray-400">
-                    <li>🏷️ **Branding** on athlete clothing, equipment, and challenge stations</li>
-                    <li>📦 **Product placement** in villa, gym, challenge zones</li>
-                    <li>📺 **Multi-platform** broadcast and streaming exposure</li>
-                    <li>🔄 **Evergreen** online revenue & future-season expansions</li>
-                </ul>
-            </div>
-            <!-- ROI Tracking -->
-            <div class="section-card p-5 rounded-xl">
-                <h5 class="text-xl font-bold text-gray-200 mb-3 flex items-center"><span class="text-yellow-400 mr-2">⭐</span> ROI Tracking & Analytics</h5>
-                <ul class="text-sm list-disc pl-5 space-y-2 text-gray-400">
-                    <li>📊 Post-broadcast **performance package**</li>
-                    <li>📈 Viewership analytics, engagement, demographics</li>
-                    <li>💰 Revenue tracking (ads, placements, digital ops)</li>
-                    <li>🎯 Brand impact metrics & **recognition indexing**</li>
-                </ul>
-            </div>
-        </div>
+      <div class="sponsorship-item grid grid-cols-4 md:grid-cols-5 text-sm">
+        <div class="font-bold text-white col-span-1">Title Sponsor</div>
+        <div class="text-yellow-400 col-span-1">$120,000</div>
+        <div class="hidden md:block text-gray-500">Major branding and marketing share</div>
+        <div class="col-span-2 md:col-span-1 text-gray-300">• “Presented by [Brand]” • Naming rights for main challenges</div>
+        <div class="hidden md:block text-[#2ea44f]">Maximum visibility & exclusivity</div>
+      </div>
 
-        <!-- 4. Target Audience and Timeline -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
-            <!-- Sponsorship Sectors -->
-            <div class="lg:col-span-1">
-                <h4 class="text-2xl font-bold text-gray-300 mb-4 border-b border-gray-700 pb-2">✅ Sponsorship Opportunities (Ideal Sectors)</h4>
-                <ul class="text-sm list-disc pl-5 space-y-2 text-gray-400 section-card p-5 rounded-xl">
-                    <li>Supplement brands</li>
-                    <li>Activewear & gym apparel</li>
-                    <li>Fitness apps & technology</li>
-                    <li>Nutrition & wellness products</li>
-                    <li>Energy drinks & hydration brands</li>
-                    <li>Adventure gear & outdoor companies</li>
-                </ul>
-                <h4 class="text-2xl font-bold text-gray-300 mb-4 mt-6 border-b border-gray-700 pb-2">✅ Branding Opportunities</h4>
-                <ul class="text-sm list-disc pl-5 space-y-2 text-gray-400 section-card p-5 rounded-xl">
-                    <li>Athlete clothing & equipment</li>
-                    <li>On-set challenge branding</li>
-                    <li>Digital overlays on episodes</li>
-                    <li>Villa product placement</li>
-                    <li>Social media co-branded content</li>
-                    <li>Dedicated ROI reporting</li>
-                </ul>
-            </div>
+      <div class="sponsorship-item grid grid-cols-4 md:grid-cols-5 text-sm">
+        <div class="font-bold text-white col-span-1">Platinum Sponsor</div>
+        <div class="text-yellow-400 col-span-1">$75,000</div>
+        <div class="hidden md:block text-gray-500">Deep brand integration</div>
+        <div class="col-span-2 md:col-span-1 text-gray-300">• Logo in credits • Product placement • Behind-the-scenes features</div>
+        <div class="hidden md:block text-[#2ea44f]">High audience association</div>
+      </div>
 
-            <!-- Reach & Timeline -->
-            <div class="lg:col-span-2">
-                <h4 class="text-2xl font-bold text-gray-300 mb-4 border-b border-gray-700 pb-2">✅ Target Audience & Reach</h4>
-                <div class="grid grid-cols-3 gap-4 text-center mb-8">
-                    <div class="section-card p-4 rounded-xl">
-                        <p class="text-4xl font-extrabold text-yellow-400">200M+</p>
-                        <p class="text-sm text-gray-400">Projected Persian-speaking global reach</p>
-                    </div>
-                    <div class="section-card p-4 rounded-xl">
-                        <p class="text-4xl font-extrabold text-yellow-400">500K+</p>
-                        <p class="text-sm text-gray-400">Social media engagement & organic growth</p>
-                    </div>
-                    <div class="section-card p-4 rounded-xl">
-                        <p class="text-4xl font-extrabold text-yellow-400">280%+</p>
-                        <p class="text-sm text-gray-400">Expected Cash-on-Cash ROI (Low-End Scenario)</p>
-                    </div>
-                </div>
+      <div class="sponsorship-item grid grid-cols-4 md:grid-cols-5 text-sm">
+        <div class="font-bold text-white col-span-1">Gold Sponsor</div>
+        <div class="text-yellow-400 col-span-1">$50,000</div>
+        <div class="hidden md:block text-gray-500">Challenge branding</div>
+        <div class="col-span-2 md:col-span-1 text-gray-300">• Prominent logo on set • Social media pushes</div>
+        <div class="hidden md:block text-[#2ea44f]">Broad, high-value visibility</div>
+      </div>
 
-                <h4 class="text-2xl font-bold text-gray-300 mb-4 border-b border-gray-700 pb-2">✅ Investment Timeline & Milestones</h4>
-                <div class="section-card p-6 rounded-xl space-y-4">
-                    <div class="flex items-start">
-                        <span class="text-3xl text-[#2ea44f] mr-4">1–2</span>
-                        <div>
-                            <p class="font-bold text-white">Month 1–2</p>
-                            <p class="text-sm text-gray-400">Pre-Production, Scouting, Casting</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start">
-                        <span class="text-3xl text-[#2ea44f] mr-4">3</span>
-                        <div>
-                            <p class="font-bold text-white">Month 3</p>
-                            <p class="text-sm text-gray-400">Production & Challenge Filming</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start">
-                        <span class="text-3xl text-[#2ea44f] mr-4">4–5</span>
-                        <div>
-                            <p class="font-bold text-white">Month 4–5</p>
-                            <p class="text-sm text-gray-400">Post-Production, Editing, Marketing Rollout</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start">
-                        <span class="text-3xl text-[#2ea44f] mr-4">6+</span>
-                        <div>
-                            <p class="font-bold text-white">Month 6+</p>
-                            <p class="text-sm text-gray-400">Broadcast, Digital Monetization & ROI Distribution</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="sponsorship-item grid grid-cols-4 md:grid-cols-5 text-sm">
+        <div class="font-bold text-white col-span-1">Silver Sponsor</div>
+        <div class="text-yellow-400 col-span-1">$25,000</div>
+        <div class="hidden md:block text-gray-500">Props & PR support</div>
+        <div class="col-span-2 md:col-span-1 text-gray-300">• Logo on props • Co-branded posts</div>
+        <div class="hidden md:block text-[#2ea44f]">Cost-effective exposure</div>
+      </div>
+
+      <div class="sponsorship-item grid grid-cols-4 md:grid-cols-5 text-sm">
+        <div class="font-bold text-white col-span-1">Bronze Sponsor</div>
+        <div class="text-yellow-400 col-span-1">$10,000</div>
+        <div class="hidden md:block text-gray-500">Credits & website</div>
+        <div class="col-span-2 md:col-span-1 text-gray-300">• Logo in end credits • Press release inclusions</div>
+        <div class="hidden md:block text-[#2ea44f]">Entry-level exposure</div>
+      </div>
+
+      <div class="sponsorship-item grid grid-cols-4 md:grid-cols-5 text-sm">
+        <div class="font-bold text-white col-span-1">Category Partner (Exclusive)</div>
+        <div class="text-yellow-400 col-span-1">$85,000</div>
+        <div class="hidden md:block text-gray-500">Product category exclusivity</div>
+        <div class="col-span-2 md:col-span-1 text-gray-300">• “Official [Product] of Limit Edge” • Daily product integration</div>
+        <div class="hidden md:block text-[#2ea44f]">Dominant niche presence</div>
+      </div>
+
+      <div class="sponsorship-item grid grid-cols-4 md:grid-cols-5 text-sm">
+        <div class="font-bold text-white col-span-1">Digital-Only Sponsor</div>
+        <div class="text-yellow-400 col-span-1">$5,000</div>
+        <div class="hidden md:block text-gray-500">Online-only</div>
+        <div class="col-span-2 md:col-span-1 text-gray-300">• Mentions in clips, hashtags • Digital product placements</div>
+        <div class="hidden md:block text-[#2ea44f]">High social media value</div>
+      </div>
     </div>
-    <!-- END OF INVESTMENT & SPONSORSHIP SECTION -->
 
-
-    <!-- START OF YOUTUBE ROI & RISK ANALYSIS SECTION -->
-    <div class="mt-16 pt-8 border-t border-gray-700">
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-yellow-400 mb-2 text-center">YouTube Launch ROI & Risk Analysis</h2>
-        <h3 class="text-xl sm:text-2xl font-bold text-gray-300 mb-8 text-center">6-Month Projection (15M-400M Views)</h3>
-
-        <div class="section-card p-6 rounded-xl mb-8">
-            <h4 class="text-2xl font-bold text-gray-300 mb-4">Executive Summary (Cash-on-Cash ROI)</h4>
-            <p class="text-gray-400">This analysis uses the **$150,000 cash investment** figure and an optimized view mix (40% Tier 1, 60% Tier 2), resulting in a **$4.70 Blended eCPM**. The project's break-even point is now significantly lower at approximately **121 million views** (down from 137M). This change improves the potential Cash-on-Cash Return on Investment (ROI) to a range of **280.9% to 437.5%** in our projected scenarios.</p>
-             <p class="text-sm text-red-400 mt-4">**Risk Note:** The total project break-even point is **120.7M views**. View volumes below this, such as the 15M and 80M cases, result in substantial loss for both partners, underscoring the importance of high view targets.</p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
-            <!-- 1. Core Financial Assumptions -->
-            <div class="lg:col-span-2 section-card p-6 rounded-xl">
-                <h4 class="text-2xl font-bold text-gray-300 mb-4 border-b border-gray-700 pb-2">1. Core Financial Assumptions (NEW VIEW MIX)</h4>
-                <div class="overflow-x-auto">
-                    <table class="styled-table">
-                        <thead>
-                            <tr>
-                                <th>Variable</th>
-                                <th>Definition</th>
-                                <th>Value (USD)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Tier 1 (T1) eCPM</strong></td>
-                                <td>US, CA, UK, AU, etc.</td>
-                                <td>$8.00</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Tier 2 (T2) eCPM</strong></td>
-                                <td>BR, MX, IN, other global markets</td>
-                                <td>$2.50</td>
-                            </tr>
-                            <tr>
-                                <td>**New View Mix**</td>
-                                <td>Assumed geographic distribution</td>
-                                <td>**T1: 40% / T2: 60%**</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Total Project Cost (C)</strong></td>
-                                <td>The full $567,350 budget (cash + in-kind/deferred)</td>
-                                <td>$567,350</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Investor Cash (I)</strong></td>
-                                <td>The actual cash injection for equity</td>
-                                <td><strong class="text-yellow-400">$150,000</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="mt-6">
-                    <h5 class="text-xl font-semibold text-gray-300 mb-2">Blended eCPM Calculation</h5>
-                    <p class="text-gray-400 text-lg">$(0.40 \times \$8.00) + (0.60 \times \$2.50) = \$3.20 + \$1.50 = <strong class="text-yellow-400 text-2xl">\mathbf{\$4.70}</strong>$</p>
-                </div>
-            </div>
-
-            <!-- View Mix Donut Chart -->
-            <div class="lg:col-span-1 section-card p-6 rounded-xl">
-                <h4 class="text-2xl font-bold text-gray-300 mb-4 text-center">Assumed View Mix (40/60)</h4>
-                <div class="chart-container" style="height: 250px; max-height: 250px;">
-                    <canvas id="viewMixChart"></canvas>
-                </div>
-                <p class="text-center text-sm text-gray-500 mt-4">The higher T1 mix ($4.70 eCPM) significantly improves revenue potential.</p>
-            </div>
-        </div>
-
-        <!-- 2. Income Projection -->
-        <h4 class="text-2xl font-bold text-gray-300 mb-6 border-b border-gray-700 pb-2">2. Income & ROI Projection (6 Months) - NEW TARGETS</h4>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-            <div class="section-card p-6 rounded-xl">
-                <h5 class="text-xl font-semibold text-gray-300 mb-4">Projected Revenue & Total Project Profit (50/50 Equity Share)</h5>
-                <div class="overflow-x-auto">
-                    <table class="styled-table">
-                        <thead>
-                            <tr>
-                                <th>Scenario</th>
-                                <th>Total Views</th>
-                                <th>Gross Revenue (@ $4.70)</th>
-                                <th>Total Project Net Profit (GR - $567,350 Cost)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="text-red-400">
-                                <td>**Worst Case**</td>
-                                <td>15,000,000</td>
-                                <td>$70,500</td>
-                                <td><strong class="text-2xl">($496,850)</strong></td>
-                            </tr>
-                             <tr class="text-red-400">
-                                <td>**Very Low Case**</td>
-                                <td>80,000,000</td>
-                                <td>$376,000</td>
-                                <td><strong class="text-2xl">($191,350)</strong></td>
-                            </tr>
-                            <tr>
-                                <td>**Threshold Case**</td>
-                                <td>150,000,000</td>
-                                <td>$705,000</td>
-                                <td><strong class="text-2xl">$137,650</strong></td>
-                            </tr>
-                            <tr>
-                                <td>**Low End**</td>
-                                <td>300,000,000</td>
-                                <td>$1,410,000</td>
-                                <td><strong class="text-2xl">$842,650</strong></td>
-                            </tr>
-                            <tr>
-                                <td>**High End**</td>
-                                <td>400,000,000</td>
-                                <td>$1,880,000</td>
-                                <td><strong class="text-2xl">$1,312,650</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="section-card p-6 rounded-xl">
-                <h5 class="text-xl font-semibold text-gray-300 mb-4">Investor's Cash-on-Cash ROI (50% of Project Net Profit)</h5>
-                <div class="overflow-x-auto">
-                    <table class="styled-table">
-                        <thead>
-                            <tr>
-                                <th>Scenario</th>
-                                <th>Investor Profit Share (50%)</th>
-                                <th>Cash Invested</th>
-                                <th>ROI</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="text-red-400">
-                                <td>**Worst Case**</td>
-                                <td>($248,425)</td>
-                                <td>$150,000</td>
-                                <td><strong class="text-2xl">-165.6%</strong></td>
-                            </tr>
-                            <tr class="text-red-400">
-                                <td>**Very Low Case**</td>
-                                <td>($95,675)</td>
-                                <td>$150,000</td>
-                                <td><strong class="text-2xl">-63.8%</strong></td>
-                            </tr>
-                            <tr>
-                                <td>**Threshold Case**</td>
-                                <td>$68,825</td>
-                                <td>$150,000</td>
-                                <td><strong class="text-2xl">45.9%</strong></td>
-                            </tr>
-                            <tr>
-                                <td>**Low End**</td>
-                                <td>$421,325</td>
-                                <td>$150,000</td>
-                                <td><strong class="text-2xl">280.9%</strong></td>
-                            </tr>
-                            <tr>
-                                <td>**High End**</td>
-                                <td>$656,325</td>
-                                <td>$150,000</td>
-                                <td><strong class="text-2xl">437.5%</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <!-- Bar Chart: Revenue and Profit -->
-        <div class="section-card p-6 rounded-xl mb-8">
-            <h5 class="text-xl font-semibold text-gray-300 mb-4 text-center">6-Month Financial Projections (New View Targets)</h5>
-             <div class="chart-container" style="height: 350px; max-height: 400px; max-width: 800px;">
-                <canvas id="revenueProjectionChart"></canvas>
-            </div>
-        </div>
-
-        <!-- 3. Risk Management -->
-        <h4 class="text-2xl font-bold text-gray-300 mb-6 border-b border-gray-700 pb-2">3. Professional Risk Management & Sensitivity</h4>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div class="section-card p-6 rounded-xl">
-                <h5 class="text-xl font-semibold text-gray-300 mb-4">Core Risk Factors & Mitigation</h5>
-                <div class="overflow-x-auto">
-                    <table class="styled-table">
-                        <thead>
-                            <tr>
-                                <th>Risk Factor</th>
-                                <th>Impact</th>
-                                <th>Mitigation Strategy</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>**Extremely Low View Volume (15M-80M)**</td>
-                                <td>Catastrophic Loss</td>
-                                <td>High-intensity early marketing push & guaranteed distribution deals (e.g., TV licensing) to guarantee base volume. **(Projected Break-even Point: 120.7M views)**</td>
-                            </tr>
-                            <tr>
-                                <td>**Ad Rate Fluctuation**</td>
-                                <td>High</td>
-                                <td>Diversify revenue (brand deals, merch). Maintain quality for premium sponsors.</td>
-                            </tr>
-                            <tr>
-                                <td>**Platform Policy Changes**</td>
-                                <td>High</td>
-                                <td>Platform Agnosticism: Cross-post to TikTok/Instagram to hedge dependency.</td>
-                            </tr>
-                            <tr>
-                                <td>**Content Saturation**</td>
-                                <td>Medium</td>
-                                <td>Systematized production schedule and workflows to ensure consistent quality.</td>
-                            </tr>
-                            <tr>
-                                <td>**View Mix Degradation**</td>
-                                <td>Medium</td>
-                                <td>Use paid promotion to target high-CPM (Tier 1) geographic regions to maintain the 40% T1 target.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            
-            <div class="section-card p-6 rounded-xl">
-                <h5 class="text-xl font-semibold text-gray-300 mb-4">Sensitivity Analysis: 15% eCPM Drop</h5>
-                <p class="text-sm text-gray-400 mb-4">If blended eCPM drops from **$4.70 to $3.99** (a 15% reduction), your ROI is affected as follows:</p>
-                <div class="overflow-x-auto">
-                    <table class="styled-table">
-                        <thead>
-                            <tr>
-                                <th>Scenario</th>
-                                <th>New Investor Profit Share (50%)</th>
-                                <th>New Investor ROI</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="text-red-400">
-                                <td>**15M Views**</td>
-                                <td>($257,175)</td>
-                                <td>**-171.5%**</td>
-                            </tr>
-                             <tr class="text-red-400">
-                                <td>**80M Views**</td>
-                                <td>($127,175)</td>
-                                <td>**-84.8%**</td>
-                            </tr>
-                            <tr>
-                                <td>**150M Views**</td>
-                                <td>$28,825</td>
-                                <td>**19.2%**</td>
-                            </tr>
-                            <tr>
-                                <td>**300M Views**</td>
-                                <td>$328,825</td>
-                                <td>**219.2%**</td>
-                            </tr>
-                            <tr>
-                                <td>**400M Views**</td>
-                                <td>$578,825</td>
-                                <td>**385.9%**</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                 <p class="text-center text-gray-400 mt-4 font-semibold">Conclusion: Even with a 15% eCPM drop, the ROI remains strong in the high-view scenarios.</p>
-            </div>
-        </div>
-
-        <!-- 4. Conclusion -->
-        <div class="section-card p-6 rounded-xl mt-8 bg-gray-900 border-yellow-500/50">
-            <h4 class="text-2xl font-bold text-yellow-400 mb-4">Conclusion for Cash Investor ($150,000)</h4>
-            <p class="text-gray-300">The shift to a **40% Tier 1 view mix** improves the financial model substantially. Your **$150,000** capital injection is now projected to yield a return of **280.9% to 437.5%** on a 50% equity share in the projected high-volume scenarios (300M+ views).</p>
-            <p class="text-gray-300 mt-4">The new analysis clearly defines the minimum required success: **121 million views is the target for project break-even**. The 150M view scenario shows a strong **45.9% ROI**, confirming that even moderately successful execution yields a significant return on your cash investment.</p>
-        </div>
-
+    <h4 class="text-2xl font-bold text-gray-300 my-6 border-b border-gray-700 pb-2">✅ Investor Benefits & Value Proposition</h4>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="section-card p-5 rounded-xl">
+        <h5 class="text-xl font-bold text-gray-200 mb-3 flex items-center"><span class="text-yellow-400 mr-2">⭐</span> Brand Exposure Opportunities</h5>
+        <ul class="text-sm list-disc pl-5 space-y-2 text-gray-400">
+          <li>🏷️ <strong>Branding</strong> on athlete clothing, equipment, and challenge stations</li>
+          <li>📦 <strong>Product placement</strong> in villa, gym, challenge zones</li>
+          <li>📺 <strong>Multi-platform</strong> broadcast and streaming exposure</li>
+          <li>🔄 <strong>Evergreen</strong> online revenue & future-season expansions</li>
+        </ul>
+      </div>
+      <div class="section-card p-5 rounded-xl">
+        <h5 class="text-xl font-bold text-gray-200 mb-3 flex items-center"><span class="text-yellow-400 mr-2">⭐</span> ROI Tracking & Analytics</h5>
+        <ul class="text-sm list-disc pl-5 space-y-2 text-gray-400">
+          <li>📊 Post-broadcast <strong>performance package</strong></li>
+          <li>📈 Viewership analytics, engagement, demographics</li>
+          <li>💰 Revenue tracking (ads, placements, digital ops)</li>
+          <li>🎯 Brand impact metrics & <strong>recognition indexing</strong></li>
+        </ul>
+      </div>
     </div>
-    <!-- END OF YOUTUBE ROI & RISK ANALYSIS SECTION -->
 
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
+      <div class="lg:col-span-1">
+        <h4 class="text-2xl font-bold text-gray-300 mb-4 border-b border-gray-700 pb-2">✅ Sponsorship Opportunities (Ideal Sectors)</h4>
+        <ul class="text-sm list-disc pl-5 space-y-2 text-gray-400 section-card p-5 rounded-xl">
+          <li>Supplement brands</li>
+          <li>Activewear & gym apparel</li>
+          <li>Fitness apps & technology</li>
+          <li>Nutrition & wellness products</li>
+          <li>Energy drinks & hydration brands</li>
+          <li>Adventure gear & outdoor companies</li>
+        </ul>
+        <h4 class="text-2xl font-bold text-gray-300 mb-4 mt-6 border-b border-gray-700 pb-2">✅ Branding Opportunities</h4>
+        <ul class="text-sm list-disc pl-5 space-y-2 text-gray-400 section-card p-5 rounded-xl">
+          <li>Athlete clothing & equipment</li>
+          <li>On-set challenge branding</li>
+          <li>Digital overlays on episodes</li>
+          <li>Villa product placement</li>
+          <li>Social media co-branded content</li>
+          <li>Dedicated ROI reporting</li>
+        </ul>
+      </div>
+      <div class="lg:col-span-2">
+        <h4 class="text-2xl font-bold text-gray-300 mb-4 border-b border-gray-700 pb-2">✅ Target Audience & Reach</h4>
+        <div class="section-card p-4 rounded-xl grid grid-cols-3 gap-4 text-center mb-8">
+          <div>
+            <p class="text-4xl font-extrabold text-yellow-400">200M+</p>
+            <p class="text-sm text-gray-400">Projected Persian-speaking global reach</p>
+          </div>
+          <div>
+            <p class="text-4xl font-extrabold text-yellow-400">500K+</p>
+            <p class="text-sm text-gray-400">Social media engagement & organic growth</p>
+          </div>
+          <div>
+            <p class="text-4xl font-extrabold text-yellow-400">260%+</p>
+            <p class="text-sm text-gray-400">Expected Cash-on-Cash ROI (300M+ views)</p>
+          </div>
+        </div>
+        <h4 class="text-2xl font-bold text-gray-300 mb-4 border-b border-gray-700 pb-2">✅ Investment Timeline & Milestones</h4>
+        <div class="section-card p-6 rounded-xl space-y-4">
+          <div class="flex items-start"><span class="text-3xl text-[#2ea44f] mr-4">1–2</span><div><p class="font-bold text-white">Month 1–2</p><p class="text-sm text-gray-400">Pre-Production, Scouting, Casting</p></div></div>
+          <div class="flex items-start"><span class="text-3xl text-[#2ea44f] mr-4">3</span><div><p class="font-bold text-white">Month 3</p><p class="text-sm text-gray-400">Production & Challenge Filming</p></div></div>
+          <div class="flex items-start"><span class="text-3xl text-[#2ea44f] mr-4">4–5</span><div><p class="font-bold text-white">Month 4–5</p><p class="text-sm text-gray-400">Post-Production, Editing, Marketing Rollout</p></div></div>
+          <div class="flex items-start"><span class="text-3xl text-[#2ea44f] mr-4">6+</span><div><p class="font-bold text-white">Month 6+</p><p class="text-sm text-gray-400">Broadcast, Digital Monetization & ROI Distribution</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- YOUTUBE ROI & RISK ANALYSIS -->
+  <div class="mt-16 pt-8 border-t border-gray-700">
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-yellow-400 mb-2 text-center">YouTube Launch ROI & Risk Analysis</h2>
+    <h3 class="text-xl sm:text-2xl font-bold text-gray-300 mb-8 text-center">6-Month Projection (15M–400M Views)</h3>
+
+    <div class="section-card p-6 rounded-xl mb-8">
+      <h4 class="text-2xl font-bold text-gray-300 mb-4">Executive Summary (Cash-on-Cash ROI)</h4>
+      <p class="text-gray-400">This analysis uses the <strong>$150,000 cash investment</strong> and an optimized view mix (40% Tier 1, 60% Tier 2), resulting in a <strong>$4.70 blended eCPM</strong>. The project's break-even point is approximately <strong>135.0 million views</strong>. In our projected scenarios, Cash-on-Cash ROI ranges from <strong>23.6%</strong> at 150M views to <strong>415.2%</strong> at 400M views.</p>
+      <p class="text-sm text-red-400 mt-4"><strong>Risk Note:</strong> The total project break-even point is <strong>~135.0M views</strong>. View volumes below this (e.g., 15M and 80M) result in substantial loss for both partners.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+      <div class="lg:col-span-2 section-card p-6 rounded-xl">
+        <h4 class="text-2xl font-bold text-gray-300 mb-4 border-b border-gray-700 pb-2">1. Core Financial Assumptions (NEW VIEW MIX)</h4>
+        <div class="overflow-x-auto">
+          <table class="styled-table">
+            <thead><tr><th>Variable</th><th>Definition</th><th>Value (USD)</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Tier 1 (T1) eCPM</strong></td><td>US, CA, UK, AU, etc.</td><td>$8.00</td></tr>
+              <tr><td><strong>Tier 2 (T2) eCPM</strong></td><td>BR, MX, IN, other global markets</td><td>$2.50</td></tr>
+              <tr><td><strong>New View Mix</strong></td><td>Assumed geographic distribution</td><td><strong>T1: 40% / T2: 60%</strong></td></tr>
+              <tr><td><strong>Total Project Cost (C)</strong></td><td>The full budget (cash + in-kind/deferred)</td><td>$634,270</td></tr>
+              <tr><td><strong>Investor Cash (I)</strong></td><td>The actual cash injection for equity</td><td><strong class="text-yellow-400">$150,000</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mt-6">
+          <h5 class="text-xl font-semibold text-gray-300 mb-2">Blended eCPM Calculation</h5>
+          <p class="text-gray-400 text-lg">(0.40 × $8.00) + (0.60 × $2.50) = $3.20 + $1.50 = <strong class="text-yellow-400 text-2xl">$4.70</strong></p>
+        </div>
+      </div>
+      <div class="lg:col-span-1 section-card p-6 rounded-xl">
+        <h4 class="text-2xl font-bold text-gray-300 mb-4 text-center">Assumed View Mix (40/60)</h4>
+        <div class="chart-container" style="height:250px;max-height:250px">
+          <canvas id="viewMixChart"></canvas>
+        </div>
+        <p class="text-center text-sm text-gray-500 mt-4">A higher Tier 1 mix increases eCPM and revenue potential.</p>
+      </div>
+    </div>
+
+    <h4 class="text-2xl font-bold text-gray-300 mb-6 border-b border-gray-700 pb-2">2. Income & ROI Projection (6 Months)</h4>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+      <div class="section-card p-6 rounded-xl">
+        <h5 class="text-xl font-semibold text-gray-300 mb-4">Projected Revenue & Total Project Profit (50/50 Equity Share)</h5>
+        <div class="overflow-x-auto">
+          <table class="styled-table">
+            <thead>
+              <tr><th>Scenario</th><th>Total Views</th><th>Gross Revenue (@ $4.70)</th><th>Total Project Net Profit (GR − $634,270 Cost)</th></tr>
+            </thead>
+            <tbody>
+              <tr class="text-red-400"><td><strong>Worst Case</strong></td><td>15,000,000</td><td>$70,500</td><td><strong class="text-2xl">($563,770)</strong></td></tr>
+              <tr class="text-red-400"><td><strong>Very Low Case</strong></td><td>80,000,000</td><td>$376,000</td><td><strong class="text-2xl">($258,270)</strong></td></tr>
+              <tr><td><strong>Threshold Case</strong></td><td>150,000,000</td><td>$705,000</td><td><strong class="text-2xl">$70,730</strong></td></tr>
+              <tr><td><strong>Low End</strong></td><td>300,000,000</td><td>$1,410,000</td><td><strong class="text-2xl">$775,730</strong></td></tr>
+              <tr><td><strong>High End</strong></td><td>400,000,000</td><td>$1,880,000</td><td><strong class="text-2xl">$1,245,730</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="section-card p-6 rounded-xl">
+        <h5 class="text-xl font-semibold text-gray-300 mb-4">Investor's Cash-on-Cash ROI (50% of Project Net Profit)</h5>
+        <div class="overflow-x-auto">
+          <table class="styled-table">
+            <thead>
+              <tr><th>Scenario</th><th>Investor Profit Share (50%)</th><th>Cash Invested</th><th>ROI</th></tr>
+            </thead>
+            <tbody>
+              <tr class="text-red-400"><td><strong>Worst Case</strong></td><td>($281,885)</td><td>$150,000</td><td><strong class="text-2xl">-187.9%</strong></td></tr>
+              <tr class="text-red-400"><td><strong>Very Low Case</strong></td><td>($129,135)</td><td>$150,000</td><td><strong class="text-2xl">-86.1%</strong></td></tr>
+              <tr><td><strong>Threshold Case</strong></td><td>$35,365</td><td>$150,000</td><td><strong class="text-2xl">23.6%</strong></td></tr>
+              <tr><td><strong>Low End</strong></td><td>$387,865</td><td>$150,000</td><td><strong class="text-2xl">258.6%</strong></td></tr>
+              <tr><td><strong>High End</strong></td><td>$622,865</td><td>$150,000</td><td><strong class="text-2xl">415.2%</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card p-6 rounded-xl mb-8">
+      <h5 class="text-xl font-semibold text-gray-300 mb-4 text-center">6-Month Financial Projections (New View Targets)</h5>
+      <div class="chart-container">
+        <canvas id="revenueProjectionChart"></canvas>
+      </div>
+    </div>
+
+    <h4 class="text-2xl font-bold text-gray-300 mb-6 border-b border-gray-700 pb-2">3. Professional Risk Management & Sensitivity</h4>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div class="section-card p-6 rounded-xl">
+        <h5 class="text-xl font-semibold text-gray-300 mb-4">Core Risk Factors & Mitigation</h5>
+        <div class="overflow-x-auto">
+          <table class="styled-table">
+            <thead><tr><th>Risk Factor</th><th>Impact</th><th>Mitigation Strategy</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Extremely Low View Volume (15M–80M)</strong></td><td>Catastrophic Loss</td><td>High-intensity early marketing push & guaranteed distribution deals (e.g., TV licensing) to guarantee base volume. <strong>(Projected Break-even Point: ~135.0M views)</strong></td></tr>
+              <tr><td><strong>Ad Rate Fluctuation</strong></td><td>High</td><td>Diversify revenue (brand deals, merch). Maintain quality for premium sponsors.</td></tr>
+              <tr><td><strong>Platform Policy Changes</strong></td><td>High</td><td>Platform agnosticism: cross-post to TikTok/Instagram to hedge dependency.</td></tr>
+              <tr><td><strong>Content Saturation</strong></td><td>Medium</td><td>Systematized production schedule and workflows to ensure consistent quality.</td></tr>
+              <tr><td><strong>View Mix Degradation</strong></td><td>Medium</td><td>Use paid promotion to target high-CPM (Tier 1) regions to maintain the 40% T1 target.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="section-card p-6 rounded-xl">
+        <h5 class="text-xl font-semibold text-gray-300 mb-4">Sensitivity Analysis: 15% eCPM Drop</h5>
+        <p class="text-sm text-gray-400 mb-4">If blended eCPM drops from <strong>$4.70 to $3.995</strong> (a 15% reduction), your ROI is affected as follows (using total cost $634,270):</p>
+        <div class="overflow-x-auto">
+          <table class="styled-table">
+            <thead>
+              <tr><th>Scenario</th><th>New Investor Profit Share (50%)</th><th>New Investor ROI</th></tr>
+            </thead>
+            <tbody>
+              <tr class="text-red-400"><td><strong>15M Views</strong></td><td>($287,172.50)</td><td><strong>-191.4%</strong></td></tr>
+              <tr class="text-red-400"><td><strong>80M Views</strong></td><td>($157,335)</td><td><strong>-104.9%</strong></td></tr>
+              <tr><td><strong>150M Views</strong></td><td>($17,510)</td><td><strong>-11.7%</strong></td></tr>
+              <tr><td><strong>300M Views</strong></td><td>$282,115</td><td><strong>188.1%</strong></td></tr>
+              <tr><td><strong>400M Views</strong></td><td>$481,865</td><td><strong>321.2%</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-center text-gray-400 mt-4 font-semibold">Conclusion: The project still shows strong ROI in high-view scenarios, even with a 15% eCPM drop.</p>
+      </div>
+    </div>
+
+    <div class="section-card p-6 rounded-xl mt-8 bg-gray-900 border-yellow-500/50">
+      <h4 class="text-2xl font-bold text-yellow-400 mb-4">Conclusion for Cash Investor ($150,000)</h4>
+      <p class="text-gray-300">With a <strong>40% Tier 1 view mix</strong> and total cost of <strong>$634,270</strong>, your <strong>$150,000</strong> capital is projected to yield approximately <strong>258.6% to 415.2%</strong> ROI at <strong>300M–400M</strong> views. The <strong>break-even</strong> threshold is around <strong>135.0M</strong> views; at <strong>150M</strong> views the ROI is still positive at <strong>23.6%</strong>.</p>
+    </div>
+  </div>
 </div>
 
 <script>
-    // Budget data structure updated for $567,350 total
-    const TOTAL_BUDGET = 567350;
-    // Investor Cash Injection for ROI calculation
-    const INVESTOR_CASH_INJECTION = 150000;
-    
-    // NEW CPM ASSUMPTIONS
-    const T1_PERCENT = 0.40; // 40% Tier 1
-    const T2_PERCENT = 0.60; // 60% Tier 2
-    const T1_CPM = 8.00;
-    const T2_CPM = 2.50;
-    const BLENDED_CPM = (T1_PERCENT * T1_CPM) + (T2_PERCENT * T2_CPM); // $4.70
+// =========================== CONSTANTS ===========================
+const TOTAL_BUDGET = 634270;
+const INVESTOR_CASH_INJECTION = 150000;
 
-    // NEW VIEW TARGETS (in raw numbers)
-    const VIEWS = {
-        WORST: 15000000,
-        VERY_LOW: 80000000,
-        THRESHOLD: 150000000,
-        LOW_END: 300000000,
-        HIGH_END: 400000000
-    };
-    
-    const budgetData = [
-        { name: '1. PRE-PRODUCTION', cost: 33000, percentage: (33000 / TOTAL_BUDGET) * 100 },
-        { name: '2. PRODUCTION', cost: 306150, percentage: (306150 / TOTAL_BUDGET) * 100 },
-        { name: '3. POST-PRODUCTION (30 Episodes)', cost: 163800, percentage: (163800 / TOTAL_BUDGET) * 100 },
-        { name: '4. MARKETING & DISTRIBUTION', cost: 33600, percentage: (33600 / TOTAL_BUDGET) * 100 },
-        { name: '5. LEGAL & ACCOUNTING', cost: 10800, percentage: (10800 / TOTAL_BUDGET) * 100 },
-        { name: '6. CONTINGENCY', cost: 20000, percentage: (20000 / TOTAL_BUDGET) * 100 },
-    ];
+// CPM assumptions
+const T1_PERCENT = 0.40;
+const T2_PERCENT = 0.60;
+const T1_CPM = 8.00;
+const T2_CPM = 2.50;
+const BLENDED_CPM = (T1_PERCENT * T1_CPM) + (T2_PERCENT * T2_CPM); // $4.70
 
-    const formatter = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0,
-    });
-    
-    // Helper function to calculate percentage
-    const calculatePerc = (cost) => (cost / TOTAL_BUDGET) * 100;
+// View targets
+const VIEWS = {
+  WORST: 15000000,
+  VERY_LOW: 80000000,
+  THRESHOLD: 150000000,
+  LOW_END: 300000000,
+  HIGH_END: 400000000,
+};
 
-    // --- Detailed Production Data (18 Items) ---
-    const productionItems = [
-        // 2.1
-        { item: '2.1 HOST FEES', cost: 61700, percentage: calculatePerc(61700), icon: '🎤', 
-          breakdown: [
-            { name: 'Anchor presenter (fixed salary)', cost: 61700, perc: calculatePerc(61700) }
-          ]
-        },
-        // 2.2
-        { item: '2.2 COMPETITOR FEES', cost: 24000, percentage: calculatePerc(24000), icon: '🏃', 
-          breakdown: [
-            { name: '12 athletes × $500/wk × 4 weeks', cost: 24000, perc: calculatePerc(24000) }
-          ]
-        },
-        // 2.3
-        { item: '2.3 DIRECTORIAL & CREATIVE', cost: 24080, percentage: calculatePerc(24080), icon: '💡', 
-          breakdown: [
-            { name: 'Director', cost: 7000, perc: calculatePerc(7000) },
-            { name: 'Producer / Showrunner', cost: 7000, perc: calculatePerc(7000) },
-            { name: 'Script Writer / Assistant Producer', cost: 5040, perc: calculatePerc(5040) },
-            { name: 'Production Manager', cost: 5040, perc: calculatePerc(5040) },
-          ]
-        },
-        // 2.4
-        { item: '2.4 CAMERA DEPARTMENT', cost: 30000, percentage: calculatePerc(30000), icon: '🎥', 
-          breakdown: [
-            { name: '4× Camera Operators', cost: 20000, perc: calculatePerc(20000) },
-            { name: 'Focus Puller', cost: 4000, perc: calculatePerc(4000) },
-            { name: 'GoPro/Gimbal Tech', cost: 3000, perc: calculatePerc(3000) },
-            { name: 'DIT / Media Manager', cost: 3000, perc: calculatePerc(3000) },
-          ]
-        },
-        // 2.5
-        { item: '2.5 DRONE UNIT', cost: 6000, percentage: calculatePerc(6000), icon: '🚁', 
-          breakdown: [
-            { name: 'Drone Pilot', cost: 4800, perc: calculatePerc(4800) },
-            { name: 'Spotter', cost: 1200, perc: calculatePerc(1200) },
-          ]
-        },
-        // 2.6
-        { item: '2.6 SOUND DEPARTMENT', cost: 8000, percentage: calculatePerc(8000), icon: '🔊', 
-          breakdown: [
-            { name: 'Sound Recordist', cost: 5600, perc: calculatePerc(5600) },
-            { name: 'Boom Operator', cost: 2400, perc: calculatePerc(2400) },
-          ]
-        },
-        // 2.7
-        { item: '2.7 PRODUCTION STAFF', cost: 10000, percentage: calculatePerc(10000), icon: '🧑‍💻', 
-          breakdown: [
-            { name: 'Floor Manager / AD', cost: 3500, perc: calculatePerc(3500) },
-            { name: '2× PAs', cost: 3000, perc: calculatePerc(3000) },
-            { name: '2× Drivers / Runners', cost: 3500, perc: calculatePerc(3500) },
-          ]
-        },
-        // 2.8
-        { item: '2.8 MAKEUP, SAFETY & MEDICAL', cost: 10000, percentage: calculatePerc(10000), icon: '⚕️', 
-          breakdown: [
-            { name: 'Makeup Artist', cost: 2200, perc: calculatePerc(2200) },
-            { name: 'Lifeguard / Water Safety', cost: 2800, perc: calculatePerc(2800) },
-            { name: 'Paramedic', cost: 5000, perc: calculatePerc(5000) },
-          ]
-        },
-        // 2.9
-        { item: '2.9 GYM RENTAL (10 days)', cost: 10000, percentage: calculatePerc(10000), icon: '🏋️', 
-          breakdown: [
-            { name: '10 days access to training facility', cost: 10000, perc: calculatePerc(10000) }
-          ]
-        },
-        // 2.10
-        { item: '2.10 ACCOMMODATION', cost: 30000, percentage: calculatePerc(30000), icon: '🏠', 
-          breakdown: [
-            { name: 'Villas/apartments', cost: 22400, perc: calculatePerc(22400) },
-            { name: 'Hotels (travel days)', cost: 3200, perc: calculatePerc(3200) },
-            { name: 'Booking fees', cost: 1200, perc: calculatePerc(1200) },
-            { name: 'Damage deposit', cost: 1000, perc: calculatePerc(1000) },
-            { name: 'Tourist tax', cost: 400, perc: calculatePerc(400) },
-          ]
-        },
-        // 2.11
-        { item: '2.11 CATERING', cost: 18000, percentage: calculatePerc(18000), icon: '🍽️', 
-          breakdown: [
-            { name: '25–30 crew & athletes × €30/day average', cost: 18000, perc: calculatePerc(18000) }
-          ]
-        },
-        // 2.12
-        { item: '2.12 TRANSPORTATION', cost: 35500, percentage: calculatePerc(35500), icon: '🚌', 
-          breakdown: [
-            { name: 'Vans / Production car / Truck / Fuel', cost: 25000, perc: calculatePerc(25000) },
-            { name: 'Competitor flights', cost: 7500, perc: calculatePerc(7500) },
-            { name: 'Crew flights', cost: 3000, perc: calculatePerc(3000) },
-          ]
-        },
-        // 2.13
-        { item: '2.13 EQUIPMENT RENTAL', cost: 15000, percentage: calculatePerc(15000), icon: '⚙️', 
-          breakdown: [
-            { name: 'Cameras/lenses', cost: 6500, perc: calculatePerc(6500) },
-            { name: 'Audio gear', cost: 2000, perc: calculatePerc(2000) },
-            { name: 'Lighting kit', cost: 1500, perc: calculatePerc(1500) },
-            { name: 'GoPros / Action Gear', cost: 1500, perc: calculatePerc(1500) },
-            { name: 'Drone Rental', cost: 2000, perc: calculatePerc(2000) },
-            { name: 'Accessories / Rigs', cost: 1500, perc: calculatePerc(1500) },
-          ]
-        },
-        // 2.14
-        { item: '2.14 INSURANCE & PERMITS', cost: 8000, percentage: calculatePerc(8000), icon: '📄', 
-          breakdown: [
-            { name: 'Liability Insurance', cost: 3500, perc: calculatePerc(3500) },
-            { name: 'Drones-Permits', cost: 800, perc: calculatePerc(800) },
-            { name: 'Location Permits', cost: 2200, perc: calculatePerc(2200) },
-            { name: 'Municipal Fees', cost: 1500, perc: calculatePerc(1500) },
-          ]
-        },
-        // 2.15
-        { item: '2.15 BASECAMP / PRODUCTION OFFICE', cost: 2000, percentage: calculatePerc(2000), icon: '⛺', 
-          breakdown: [
-            { name: 'Pop-up tents / shade', cost: 600, perc: calculatePerc(600) },
-            { name: 'Tables & chairs', cost: 400, perc: calculatePerc(400) },
-            { name: 'Small generator / power', cost: 600, perc: calculatePerc(600) },
-            { name: 'Water & ice station', cost: 400, perc: calculatePerc(400) },
-          ]
-        },
-        // 2.16
-        { item: '2.16 DATA STORAGE / BACKUP', cost: 2500, percentage: calculatePerc(2500), icon: '💾', 
-          breakdown: [
-            { name: 'RAID/SSD drives (~20TB)', cost: 1500, perc: calculatePerc(1500) },
-            { name: 'Cloud storage (2 months)', cost: 700, perc: calculatePerc(700) },
-            { name: 'Backup docks/readers', cost: 300, perc: calculatePerc(300) },
-          ]
-        },
-        // 2.17
-        { item: '2.17 MISC. PRODUCTION', cost: 10770, percentage: calculatePerc(10770), icon: '💰', 
-          breakdown: [
-            { name: 'Props & set dressing', cost: 2500, perc: calculatePerc(2500) },
-            { name: 'Obstacle repairs / maintenance', cost: 3500, perc: calculatePerc(3500) },
-            { name: 'Media cards & batteries', cost: 2270, perc: calculatePerc(2270) },
-            { name: 'Emergency purchases', cost: 2500, perc: calculatePerc(2500) },
-          ]
-        },
-        // 2.18 (NEW ITEM)
-        { item: '2.18 LEAN BRANDING & WARDROBE', cost: 10600, percentage: calculatePerc(10600), icon: '👕', 
-          breakdown: [
-            { name: 'Athlete Clothing (3 tops each, logo only)', cost: 3600, perc: calculatePerc(3600) },
-            { name: 'Athlete Sweatshirts (1 each, logo only)', cost: 1200, perc: calculatePerc(1200) },
-            { name: 'Crew T-Shirts (2 per crew, print)', cost: 1800, perc: calculatePerc(1800) },
-            { name: 'Set Branding (Flags, banners, etc.)', cost: 4000, perc: calculatePerc(4000) },
-          ]
-        },
-    ];
+// ===================== MAIN CATEGORY DATA =======================
+const budgetData = [
+  { name: '1. PRE-PRODUCTION', cost: 64000, percentage: (64000 / TOTAL_BUDGET) * 100 },
+  { name: '2. PRODUCTION', cost: 332070, percentage: (332070 / TOTAL_BUDGET) * 100 },
+  { name: '3. POST-PRODUCTION (30 Episodes)', cost: 183800, percentage: (183800 / TOTAL_BUDGET) * 100 },
+  { name: '4. MARKETING & DISTRIBUTION', cost: 33600, percentage: (33600 / TOTAL_BUDGET) * 100 },
+  { name: '5. LEGAL & ACCOUNTING', cost: 10800, percentage: (10800 / TOTAL_BUDGET) * 100 },
+  { name: '6. CONTINGENCY', cost: 10000, percentage: (10000 / TOTAL_BUDGET) * 100 },
+];
 
-    /**
-     * Renders a progress bar component.
-     */
-    function renderBar(name, cost, percentage, barColor = 'bg-[#2ea44f]') {
-        const costStr = formatter.format(cost);
-        const percentStr = `${percentage.toFixed(2)}%`;
-        const widthStyle = `width: ${Math.min(percentage, 100)}%;`; // Cap at 100%
+const formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency', currency: 'USD', minimumFractionDigits: 0, maximumFractionDigits: 0,
+});
+const calculatePerc = (cost) => (cost / TOTAL_BUDGET) * 100;
 
-        const barHtml = `
-            <div class="section-card p-4 rounded-lg">
-                <div class="flex justify-between items-center mb-1">
-                    <span class="text-base font-semibold text-gray-200">${name}</span>
-                    <div class="text-right">
-                        <span class="text-lg font-bold text-white">${costStr}</span>
-                        <span class="text-sm font-semibold text-[#2ea44f] ml-2">${percentStr}</span>
-                    </div>
-                </div>
-                <div class="progress-bar-bg h-3 rounded-full overflow-hidden">
-                    <div class="progress-bar-fill h-full rounded-full ${barColor}" style="${widthStyle}"></div>
-                </div>
-            </div>
-        `;
-        return barHtml;
+// =================== PRODUCTION SUB-ITEMS =======================
+// These must sum to exactly 332,070
+const productionItems = [
+  { item: '2.1 HOST FEES', cost: 61700, percentage: calculatePerc(61700), icon: '🎤', breakdown: [
+    { name: 'Anchor presenter (fixed salary)', cost: 61700, perc: calculatePerc(61700) },
+  ]},
+  { item: '2.2 COMPETITOR FEES', cost: 24000, percentage: calculatePerc(24000), icon: '🏃', breakdown: [
+    { name: '12 athletes × $500/wk × 4 weeks', cost: 24000, perc: calculatePerc(24000) },
+  ]},
+  { item: '2.3 DIRECTORIAL & CREATIVE', cost: 40000, percentage: calculatePerc(40000), icon: '💡', breakdown: [
+    { name: 'Director', cost: 10000, perc: calculatePerc(10000) },
+    { name: 'Producer / Showrunner', cost: 10000, perc: calculatePerc(10000) },
+    { name: 'Script Writer / Assistant Producer', cost: 10000, perc: calculatePerc(10000) },
+    { name: 'Production Manager', cost: 10000, perc: calculatePerc(10000) },
+  ]},
+  { item: '2.4 CAMERA DEPARTMENT', cost: 30000, percentage: calculatePerc(30000), icon: '🎥', breakdown: [
+    { name: '4× Camera Operators', cost: 20000, perc: calculatePerc(20000) },
+    { name: 'Focus Puller', cost: 4000, perc: calculatePerc(4000) },
+    { name: 'GoPro/Gimbal Tech', cost: 3000, perc: calculatePerc(3000) },
+    { name: 'DIT / Media Manager', cost: 3000, perc: calculatePerc(3000) },
+  ]},
+  { item: '2.5 DRONE UNIT', cost: 6000, percentage: calculatePerc(6000), icon: '🚁', breakdown: [
+    { name: 'Drone Pilot', cost: 4800, perc: calculatePerc(4800) },
+    { name: 'Spotter', cost: 1200, perc: calculatePerc(1200) },
+  ]},
+  { item: '2.6 SOUND DEPARTMENT', cost: 8000, percentage: calculatePerc(8000), icon: '🔊', breakdown: [
+    { name: 'Sound Recordist', cost: 5600, perc: calculatePerc(5600) },
+    { name: 'Boom Operator', cost: 2400, perc: calculatePerc(2400) },
+  ]},
+  { item: '2.7 PRODUCTION STAFF', cost: 10000, percentage: calculatePerc(10000), icon: '🧑‍💻', breakdown: [
+    { name: 'Floor Manager / AD', cost: 3500, perc: calculatePerc(3500) },
+    { name: '2× PAs', cost: 3000, perc: calculatePerc(3000) },
+    { name: '2× Drivers / Runners', cost: 3500, perc: calculatePerc(3500) },
+  ]},
+  { item: '2.8 MAKEUP, SAFETY & MEDICAL', cost: 10000, percentage: calculatePerc(10000), icon: '⚕️', breakdown: [
+    { name: 'Makeup Artist', cost: 2200, perc: calculatePerc(2200) },
+    { name: 'Lifeguard / Water Safety', cost: 2800, perc: calculatePerc(2800) },
+    { name: 'Paramedic', cost: 5000, perc: calculatePerc(5000) },
+  ]},
+  { item: '2.9 GYM RENTAL (10 days)', cost: 10000, percentage: calculatePerc(10000), icon: '🏋️', breakdown: [
+    { name: '10 days access to training facility', cost: 10000, perc: calculatePerc(10000) },
+  ]},
+  { item: '2.10 ACCOMMODATION', cost: 30000, percentage: calculatePerc(30000), icon: '🏠', breakdown: [
+    { name: 'Villas/apartments', cost: 22400, perc: calculatePerc(22400) },
+    { name: 'Hotels (travel days)', cost: 3200, perc: calculatePerc(3200) },
+    { name: 'Booking fees', cost: 1200, perc: calculatePerc(1200) },
+    { name: 'Damage deposit', cost: 1000, perc: calculatePerc(1000) },
+    { name: 'Tourist tax', cost: 400, perc: calculatePerc(400) },
+  ]},
+  { item: '2.11 CATERING', cost: 18000, percentage: calculatePerc(18000), icon: '🍽️', breakdown: [
+    { name: '25–30 crew & athletes × €30/day average', cost: 18000, perc: calculatePerc(18000) },
+  ]},
+  { item: '2.12 TRANSPORTATION', cost: 35500, percentage: calculatePerc(35500), icon: '🚌', breakdown: [
+    { name: 'Vans / Production car / Truck / Fuel', cost: 25000, perc: calculatePerc(25000) },
+    { name: 'Competitor flights', cost: 7500, perc: calculatePerc(7500) },
+    { name: 'Crew flights', cost: 3000, perc: calculatePerc(3000) },
+  ]},
+  { item: '2.13 EQUIPMENT RENTAL', cost: 15000, percentage: calculatePerc(15000), icon: '⚙️', breakdown: [
+    { name: 'Cameras/lenses', cost: 6500, perc: calculatePerc(6500) },
+    { name: 'Audio gear', cost: 2000, perc: calculatePerc(2000) },
+    { name: 'Lighting kit', cost: 1500, perc: calculatePerc(1500) },
+    { name: 'GoPros / Action Gear', cost: 1500, perc: calculatePerc(1500) },
+    { name: 'Drone Rental', cost: 2000, perc: calculatePerc(2000) },
+    { name: 'Accessories / Rigs', cost: 1500, perc: calculatePerc(1500) },
+  ]},
+  { item: '2.14 INSURANCE & PERMITS', cost: 8000, percentage: calculatePerc(8000), icon: '📄', breakdown: [
+    { name: 'Liability Insurance', cost: 3500, perc: calculatePerc(3500) },
+    { name: 'Drones-Permits', cost: 800, perc: calculatePerc(800) },
+    { name: 'Location Permits', cost: 2200, perc: calculatePerc(2200) },
+    { name: 'Municipal Fees', cost: 1500, perc: calculatePerc(1500) },
+  ]},
+  { item: '2.15 BASECAMP / PRODUCTION OFFICE', cost: 2000, percentage: calculatePerc(2000), icon: '⛺', breakdown: [
+    { name: 'Pop-up tents / shade', cost: 600, perc: calculatePerc(600) },
+    { name: 'Tables & chairs', cost: 400, perc: calculatePerc(400) },
+    { name: 'Small generator / power', cost: 600, perc: calculatePerc(600) },
+    { name: 'Water & ice station', cost: 400, perc: calculatePerc(400) },
+  ]},
+  { item: '2.16 DATA STORAGE / BACKUP', cost: 2500, percentage: calculatePerc(2500), icon: '💾', breakdown: [
+    { name: 'RAID/SSD drives (~20TB)', cost: 1500, perc: calculatePerc(1500) },
+    { name: 'Cloud storage (2 months)', cost: 700, perc: calculatePerc(700) },
+    { name: 'Backup docks/readers', cost: 300, perc: calculatePerc(300) },
+  ]},
+  { item: '2.17 MISC. PRODUCTION', cost: 10770, percentage: calculatePerc(10770), icon: '💰', breakdown: [
+    { name: 'Props & set dressing', cost: 2500, perc: calculatePerc(2500) },
+    { name: 'Obstacle repairs / maintenance', cost: 3500, perc: calculatePerc(3500) },
+    { name: 'Media cards & batteries', cost: 2270, perc: calculatePerc(2270) },
+    { name: 'Emergency purchases', cost: 2500, perc: calculatePerc(2500) },
+  ]},
+  { item: '2.18 LEAN BRANDING & WARDROBE', cost: 10600, percentage: calculatePerc(10600), icon: '👕', breakdown: [
+    { name: 'Athlete Clothing (3 tops each, logo only)', cost: 3600, perc: calculatePerc(3600) },
+    { name: 'Athlete Sweatshirts (1 each, logo only)', cost: 1200, perc: calculatePerc(1200) },
+    { name: 'Crew T-Shirts (2 per crew, print)', cost: 1800, perc: calculatePerc(1800) },
+    { name: 'Set Branding (Flags, banners, etc.)', cost: 4000, perc: calculatePerc(4000) },
+  ]},
+];
+
+// ======================= RENDER HELPERS =========================
+function renderBar(name, cost, percentage, barColor = 'bg-[#2ea44f]'){
+  const costStr = formatter.format(cost);
+  const percentStr = `${percentage.toFixed(2)}%`;
+  const widthStyle = `width:${Math.min(percentage,100)}%`;
+  return `
+    <div class="section-card p-4 rounded-lg">
+      <div class="flex justify-between items-center mb-1">
+        <span class="text-base font-semibold text-gray-200">${name}</span>
+        <div class="text-right">
+          <span class="text-lg font-bold text-white">${costStr}</span>
+          <span class="text-sm font-semibold text-[#2ea44f] ml-2">${percentStr}</span>
+        </div>
+      </div>
+      <div class="progress-bar-bg h-3 rounded-full overflow-hidden">
+        <div class="progress-bar-fill h-full rounded-full ${barColor}" style="${widthStyle}"></div>
+      </div>
+    </div>`;
+}
+
+function renderBreakdownList(breakdown){
+  if(!breakdown||breakdown.length===0) return '';
+  return `<ul class="breakdown-list space-y-1 mt-3">${breakdown.map(b=>`
+    <li><span class="breakdown-name">${b.name}</span><span class="breakdown-cost">${formatter.format(b.cost)} <span class="text-[#2ea44f]">(${b.perc.toFixed(2)}%)</span></span></li>
+  `).join('')}</ul>`;
+}
+
+function renderDetailCard(item){
+  const costStr = formatter.format(item.cost);
+  const percentStr = `${item.percentage.toFixed(2)}%`;
+  const breakdownHtml = renderBreakdownList(item.breakdown);
+  return `
+    <div class="production-detail-card p-5 rounded-xl border border-gray-700 flex flex-col justify-between">
+      <div>
+        <div class="flex items-center space-x-3 mb-2">
+          <span class="text-2xl">${item.icon}</span>
+          <h4 class="text-base font-bold text-gray-100">${item.item}</h4>
+        </div>
+        <p class="text-3xl font-extrabold text-yellow-400">${costStr}</p>
+        <p class="text-sm text-gray-400 font-medium">of Total Budget: <span class="text-[#2ea44f]">${percentStr}</span></p>
+      </div>
+      ${breakdownHtml}
+    </div>`;
+}
+
+// Render main budget bars
+const mainBudgetContainer = document.getElementById('main-budget-bars');
+mainBudgetContainer.innerHTML = budgetData.map(d=>{
+  const color = d.name.includes('PRODUCTION') && d.percentage > 50 ? 'bg-yellow-500' : 'bg-[#2ea44f]';
+  return renderBar(d.name, d.cost, d.percentage, color);
+}).join('');
+
+// Render production detail cards
+const productionDetailsContainer = document.getElementById('production-details');
+productionDetailsContainer.innerHTML = productionItems.map(renderDetailCard).join('');
+
+// ============================ CHARTS ============================
+// View Mix Donut
+const ctxViewMix = document.getElementById('viewMixChart').getContext('2d');
+new Chart(ctxViewMix, {
+  type: 'doughnut',
+  data: { labels: ['Tier 1 (40%)', 'Tier 2 (60%)'], datasets: [{ data: [T1_PERCENT*100, T2_PERCENT*100], backgroundColor: ['#2ea44f','#30363d'], borderColor: ['#2ea44f','#30363d'], borderWidth: 1 }] },
+  options: { responsive:true, maintainAspectRatio:false, plugins:{ legend:{ position:'bottom', labels:{ color:'#c9d1d9' } } } }
+});
+
+// Revenue Projection Bar Chart
+const ctxRevenue = document.getElementById('revenueProjectionChart').getContext('2d');
+const grossRevenue = (views)=> (views/1000)*BLENDED_CPM;
+const netProfit = (gross)=> gross - TOTAL_BUDGET;
+const viewLabels = ['Worst (15M)','Very Low (80M)','Threshold (150M)','Low End (300M)','High End (400M)'];
+const grossRevenues = [grossRevenue(VIEWS.WORST), grossRevenue(VIEWS.VERY_LOW), grossRevenue(VIEWS.THRESHOLD), grossRevenue(VIEWS.LOW_END), grossRevenue(VIEWS.HIGH_END)];
+const netProfits = grossRevenues.map(netProfit);
+new Chart(ctxRevenue, {
+  type: 'bar',
+  data: {
+    labels: viewLabels,
+    datasets: [
+      { label:'Gross Revenue', data:grossRevenues, backgroundColor:['#DC2626','#F59E0B','#2ea44f','#2ea44f','#2ea44f'], borderColor:['#DC2626','#F59E0B','#2ea44f','#2ea44f','#2ea44f'], borderWidth:1 },
+      { label:'Total Project Net Profit', data:netProfits, backgroundColor:'#FBBF24', borderColor:'#FBBF24', borderWidth:1 },
+      { label:'Total Project Cost ($634,270)', data:[TOTAL_BUDGET,TOTAL_BUDGET,TOTAL_BUDGET,TOTAL_BUDGET,TOTAL_BUDGET], backgroundColor:'#8b949e', borderColor:'#8b949e', borderWidth:1 }
+    ]
+  },
+  options: {
+    responsive:true, maintainAspectRatio:false,
+    scales:{
+      y:{ beginAtZero:false, ticks:{ color:'#c9d1d9', callback:(v)=>{ const sign=v<0?'-':''; const abs=Math.abs(v); return sign+formatter.format(abs); } }, grid:{ color:'#30363d' } },
+      x:{ ticks:{ color:'#c9d1d9' }, grid:{ display:false } }
+    },
+    plugins:{ legend:{ position:'bottom', labels:{ color:'#c9d1d9' } } }
+  }
+});
+
+// ============================ TESTS ============================
+(function runTests(){
+  const approxEq = (a,b,eps=1e-2)=> Math.abs(a-b) < eps;
+
+  // 1) Category totals must sum to TOTAL_BUDGET
+  const catSum = budgetData.reduce((s,d)=>s+d.cost,0);
+  console.assert(catSum === TOTAL_BUDGET, `Category sum ${catSum} !== TOTAL_BUDGET ${TOTAL_BUDGET}`);
+
+  // 2) Production items must sum to the production category
+  const prodSum = productionItems.reduce((s,i)=>s+i.cost,0);
+  console.assert(prodSum === 332070, `Production sum ${prodSum} !== 332070`);
+
+  // 3) Percentages per category
+  budgetData.forEach(d=>{
+    const expected = (d.cost/TOTAL_BUDGET)*100;
+    console.assert(approxEq(d.percentage, expected), `Percentage mismatch for ${d.name}: ${d.percentage} vs ${expected}`);
+  });
+
+  // 4) Each production breakdown must sum to its item cost
+  productionItems.forEach(i=>{
+    const bsum = (i.breakdown||[]).reduce((s,b)=>s+b.cost,0);
+    if((i.breakdown||[]).length>0){
+      console.assert(bsum === i.cost, `Breakdown sum mismatch for ${i.item}: ${bsum} vs ${i.cost}`);
     }
+  });
 
-    /**
-     * Renders the nested breakdown list.
-     */
-    function renderBreakdownList(breakdown) {
-        if (!breakdown || breakdown.length === 0) return '';
-        
-        const listItems = breakdown.map(item => `
-            <li>
-                <span class="breakdown-name">${item.name}</span>
-                <span class="breakdown-cost">${formatter.format(item.cost)} <span class="text-[#2ea44f]">(${item.perc.toFixed(2)}%)</span></span>
-            </li>
-        `).join('');
+  // 5) Chart canvases exist
+  console.assert(document.getElementById('viewMixChart'), 'viewMixChart canvas missing');
+  console.assert(document.getElementById('revenueProjectionChart'), 'revenueProjectionChart canvas missing');
 
-        return `<ul class="breakdown-list space-y-1 mt-3">${listItems}</ul>`;
-    }
-
-    /**
-     * Renders a detailed card for a single production sub-item.
-     */
-    function renderDetailCard(itemData) {
-        const costStr = formatter.format(itemData.cost);
-        const percentStr = `${itemData.percentage.toFixed(2)}%`;
-        const breakdownHtml = renderBreakdownList(itemData.breakdown);
-
-        return `
-            <div class="production-detail-card p-5 rounded-xl border border-gray-700 flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center space-x-3 mb-2">
-                        <span class="text-2xl">${itemData.icon}</span>
-                        <h4 class="text-base font-bold text-gray-100">${itemData.item}</h4>
-                    </div>
-                    <p class="text-3xl font-extrabold text-yellow-400">${costStr}</p>
-                    <p class="text-sm text-gray-400 font-medium">of Total Budget: <span class="text-[#2ea44f]">${percentStr}</span></p>
-                </div>
-                
-                <!-- Detailed Breakdown -->
-                ${breakdownHtml}
-            </div>
-        `;
-    }
-
-    // 1. Render Main Budget Bars
-    const mainBudgetContainer = document.getElementById('main-budget-bars');
-    const mainBarHtml = budgetData.map(data => {
-        // Use yellow accent for the largest item (Production)
-        const color = data.name.includes('PRODUCTION') && data.percentage > 50 ? 'bg-yellow-500' : 'bg-[#2ea44f]';
-        return renderBar(data.name, data.cost, data.percentage, color);
-    }).join('');
-    mainBudgetContainer.innerHTML = mainBarHtml;
-
-    // 2. Render Production Details (Sub-Items)
-    const productionDetailsContainer = document.getElementById('production-details');
-
-    const detailCardHtml = productionItems.map(item =>
-        renderDetailCard(item)
-    ).join('');
-
-    productionDetailsContainer.innerHTML = detailCardHtml;
-
-
-    // --- NEW CHARTS FOR ROI SECTION ---
-
-    // 3. View Mix Donut Chart
-    const ctxViewMix = document.getElementById('viewMixChart').getContext('2d');
-    new Chart(ctxViewMix, {
-        type: 'doughnut',
-        data: {
-            labels: ['Tier 1 (40%)', 'Tier 2 (60%)'],
-            datasets: [{
-                data: [T1_PERCENT * 100, T2_PERCENT * 100],
-                backgroundColor: ['#2ea44f', '#30363d'],
-                borderColor: ['#2ea44f', '#30363d'],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'bottom',
-                    labels: {
-                        color: '#c9d1d9'
-                    }
-                },
-                tooltip: {
-                    callbacks: {
-                        title: function(tooltipItems) {
-                            return tooltipItems[0].label;
-                        }
-                    }
-                }
-            }
-        }
-    });
-
-    // 4. Revenue Projection Bar Chart
-    const ctxRevenue = document.getElementById('revenueProjectionChart').getContext('2d');
-    
-    // Function to calculate gross revenue
-    const calculateGrossRevenue = (views) => (views / 1000) * BLENDED_CPM;
-    
-    // Function to calculate net profit (for 100% project)
-    const calculateNetProfit = (grossRevenue) => grossRevenue - TOTAL_BUDGET;
-
-    // Data points for chart
-    const viewLabels = ['Worst (15M)', 'Very Low (80M)', 'Threshold (150M)', 'Low End (300M)', 'High End (400M)'];
-    
-    const grossRevenues = [
-        calculateGrossRevenue(VIEWS.WORST),
-        calculateGrossRevenue(VIEWS.VERY_LOW),
-        calculateGrossRevenue(VIEWS.THRESHOLD),
-        calculateGrossRevenue(VIEWS.LOW_END),
-        calculateGrossRevenue(VIEWS.HIGH_END)
-    ];
-
-    const netProfits = grossRevenues.map(calculateNetProfit);
-
-
-    new Chart(ctxRevenue, {
-        type: 'bar',
-        data: {
-            labels: viewLabels, 
-            datasets: [
-                {
-                    label: 'Gross Revenue',
-                    data: grossRevenues, 
-                    backgroundColor: ['#DC2626', '#F59E0B', '#2ea44f', '#2ea44f', '#2ea44f'], // Red, Orange, Green
-                    borderColor: ['#DC2626', '#F59E0B', '#2ea44f', '#2ea44f', '#2ea44f'],
-                    borderWidth: 1
-                },
-                {
-                    label: 'Total Project Net Profit',
-                    data: netProfits, 
-                    backgroundColor: ['#FBBF24', '#FBBF24', '#FBBF24', '#FBBF24', '#FBBF24'], // Yellow
-                    borderColor: ['#FBBF24', '#FBBF24', '#FBBF24', '#FBBF24', '#FBBF24'],
-                    borderWidth: 1
-                },
-                {
-                    label: 'Total Project Cost ($567,350)',
-                    data: [TOTAL_BUDGET, TOTAL_BUDGET, TOTAL_BUDGET, TOTAL_BUDGET, TOTAL_BUDGET], // Gray line for cost
-                    backgroundColor: '#8b949e', 
-                    borderColor: '#8b949e',
-                    borderWidth: 1
-                }
-            ]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                y: {
-                    beginAtZero: false, 
-                    ticks: {
-                        color: '#c9d1d9',
-                        callback: function(value) {
-                            // Custom formatting to handle negative and zero values correctly
-                            const sign = value < 0 ? '-' : '';
-                            const absValue = Math.abs(value);
-                            return sign + formatter.format(absValue);
-                        }
-                    },
-                    grid: {
-                        color: '#30363d'
-                    }
-                },
-                x: {
-                    ticks: {
-                        color: '#c9d1d9'
-                    },
-                    grid: {
-                        display: false
-                    }
-                }
-            },
-            plugins: {
-                legend: {
-                    position: 'bottom',
-                    labels: {
-                        color: '#c9d1d9'
-                    }
-                },
-                tooltip: {
-                    callbacks: {
-                        title: function(tooltipItems) {
-                            return tooltipItems[0].label;
-                        },
-                         label: function(context) {
-                            let label = context.dataset.label || '';
-                            if (label) {
-                                label += ': ';
-                            }
-                            if (context.parsed.y !== null) {
-                                // Custom tooltip formatting to handle negative values
-                                const value = context.parsed.y;
-                                const sign = value < 0 ? '-' : '';
-                                const absValue = Math.abs(value);
-                                label += sign + formatter.format(absValue);
-                            }
-                            return label;
-                        }
-                    }
-                }
-            }
-        }
-    });
-
+  console.log('%cAll tests queued. Check console for any assertion failures.','color:#2ea44f');
+})();
 </script>
-
 </body>
 </html>
